@@ -6,7 +6,7 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading;
 using System.Threading.Tasks;
-using Content.Shared._OpenSpace.CVars;
+using Content.Shared._OpenSpace.OpenCVars;
 using Prometheus;
 using Robust.Shared.Configuration;
 
@@ -46,13 +46,13 @@ public sealed class TTSManager
     public void Initialize()
     {
         _sawmill = Logger.GetSawmill("tts");
-        _cfg.OnValueChanged(CVars.TTSMaxCache, val =>
+        _cfg.OnValueChanged(OpenCVars.TTSMaxCache, val =>
         {
             _maxCachedCount = val;
             ResetCache();
         }, true);
-        _cfg.OnValueChanged(CVars.TTSApiUrl, v => _apiUrl = v, true);
-        _cfg.OnValueChanged(CVars.TTSApiToken, v => _apiToken = v, true);
+        _cfg.OnValueChanged(OpenCVars.TTSApiUrl, v => _apiUrl = v, true);
+        _cfg.OnValueChanged(OpenCVars.TTSApiToken, v => _apiToken = v, true);
     }
 
     /// <summary>
@@ -84,7 +84,7 @@ public sealed class TTSManager
         var reqTime = DateTime.UtcNow;
         try
         {
-            var timeout = _cfg.GetCVar(CVars.TTSApiTimeout);
+            var timeout = _cfg.GetCVar(OpenCVars.TTSApiTimeout);
             var cts = new CancellationTokenSource(TimeSpan.FromSeconds(timeout));
             var response = await _httpClient.PostAsJsonAsync(_apiUrl, body, cts.Token);
             if (!response.IsSuccessStatusCode)

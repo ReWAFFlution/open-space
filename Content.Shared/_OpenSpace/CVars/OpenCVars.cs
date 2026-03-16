@@ -1,13 +1,14 @@
+using Robust.Shared;
 using Robust.Shared.Configuration;
 
-namespace Content.Shared._OpenSpace.CVars;
+namespace Content.Shared._OpenSpace.OpenCVars;
 
 /// <summary>
 ///     _OpenSpace modules console variables
 /// </summary>
 [CVarDefs]
 // ReSharper disable once InconsistentNaming
-public sealed class CVars
+public sealed class OpenCVars : CVars
 {
     /**
      * TTS (Text-To-Speech)

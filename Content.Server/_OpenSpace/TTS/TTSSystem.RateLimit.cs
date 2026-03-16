@@ -1,6 +1,6 @@
 using Content.Server.Chat.Managers;
 using Content.Server.Players.RateLimiting;
-using Content.Shared._OpenSpace.CVars;
+using Content.Shared._OpenSpace.OpenCVars;
 using Content.Shared.Players.RateLimiting;
 using Robust.Shared.Player;
 
@@ -17,8 +17,8 @@ public sealed partial class TTSSystem
     {
         _rateLimitManager.Register(RateLimitKey,
             new RateLimitRegistration(
-                CVars.TTSRateLimitPeriod,
-                CVars.TTSRateLimitCount,
+                OpenCVars.TTSRateLimitPeriod,
+                OpenCVars.TTSRateLimitCount,
                 RateLimitPlayerLimited)
             );
     }

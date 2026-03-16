@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
 using Content.Shared.Chat;
 using Content.Server.Chat.Systems;
-using Content.Shared._OpenSpace.CVars;
+using Content.Shared._OpenSpace.OpenCVars;
 using Content.Shared._OpenSpace.TTS;
 using Content.Shared.GameTicking;
 using Content.Shared.Players.RateLimiting;
@@ -43,7 +43,7 @@ public sealed partial class TTSSystem : EntitySystem
 
     public override void Initialize()
     {
-        _cfg.OnValueChanged(CVars.TTSEnabled, v => _isEnabled = v, true);
+        _cfg.OnValueChanged(OpenCVars.TTSEnabled, v => _isEnabled = v, true);
 
         SubscribeLocalEvent<TransformSpeechEvent>(OnTransformSpeech);
         SubscribeLocalEvent<TTSComponent, EntitySpokeEvent>(OnEntitySpoke);

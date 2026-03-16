@@ -1,5 +1,5 @@
 using Content.Shared.Chat;
-using Content.Shared._OpenSpace.CVars;
+using Content.Shared._OpenSpace.OpenCVars;
 using Content.Shared._OpenSpace.TTS;
 using Robust.Client.Audio;
 using Robust.Client.ResourceManagement;
@@ -49,14 +49,14 @@ public sealed class TTSSystem : EntitySystem
         }
 
         _sawmill = Logger.GetSawmill("tts");
-        _cfg.OnValueChanged(CVars.TTSVolume, OnTtsVolumeChanged, true);
+        _cfg.OnValueChanged(OpenCVars.TTSVolume, OnTtsVolumeChanged, true);
         SubscribeNetworkEvent<PlayTTSEvent>(OnPlayTTS);
     }
 
     public override void Shutdown()
     {
         base.Shutdown();
-        _cfg.UnsubValueChanged(CVars.TTSVolume, OnTtsVolumeChanged);
+        _cfg.UnsubValueChanged(OpenCVars.TTSVolume, OnTtsVolumeChanged);
     }
 
     public void RequestPreviewTTS(string voiceId)
