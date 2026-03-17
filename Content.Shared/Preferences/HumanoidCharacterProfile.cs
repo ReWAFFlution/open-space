@@ -36,12 +36,12 @@ namespace Content.Shared.Preferences
         private static readonly Regex ICNameCaseRegex = new(@"^(?<word>\w)|\b(?<word>\w)(?=\w*$)");
 
         // OpenSpace-TTS Start
-        public const string DefaultVoice = "moriarti";
+        public const string DefaultVoice = "father_grigori";
         public static readonly Dictionary<Sex, string> DefaultSexVoice = new()
         {
-        {Sex.Male, "moriarti"},
-        {Sex.Female, "Maiev"},
-        {Sex.Unsexed, "Myron"},
+        {Sex.Male, "father_grigori"},
+        {Sex.Female, "alina"},
+        {Sex.Unsexed, "adventure_core"},
         };
         // OpenSpace-TTS End
 

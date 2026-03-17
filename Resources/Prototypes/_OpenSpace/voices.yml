@@ -1,1924 +1,1671 @@
-- type: voice
-  id: Papich
-  name: tts-voice-name-papich
-  sex: Male
-  silicon: false
-  speaker: papich
-
-- type: voice
-  id: Bebey
-  name: tts-voice-name-bebey
-  sex: Male
-  silicon: false
-  speaker: bebey
-
-- type: voice
-  id: Puchkow
-  name: tts-voice-name-puchkow
-  sex: Male
-  silicon: false
-  speaker: puchkow
-
-- type: voice
-  id: Moriarti
-  name: tts-voice-name-moriarti
-  sex: Male
-  silicon: false
-  speaker: moriarti
-
-- type: voice
-  id: Charlotte
-  name: tts-voice-name-charlotte
-  sex: Female
-  silicon: false
-  speaker: charlotte
-
-- type: voice
-  id: Planya
-  name: tts-voice-name-planya
-  sex: Female
-  silicon: false
-  speaker: planya
-
-- type: voice
-  id: Mana
-  name: tts-voice-name-mana
-  sex: Female
-  silicon: false
-  speaker: mana
-
-- type: voice
-  id: Amina
-  name: tts-voice-name-amina
-  sex: Female
-  silicon: false
-  speaker: amina
-
-- type: voice
-  id: Biden
-  name: tts-voice-name-biden
-  sex: Male
-  silicon: false
-  speaker: biden
-
-- type: voice
-  id: Obama
-  name: tts-voice-name-obama
-  sex: Male
-  silicon: false
-  speaker: obama
-
-- type: voice
-  id: Trump
-  name: tts-voice-name-trump
-  sex: Male
-  silicon: false
-  speaker: trump
-
-- type: voice
-  id: Dbkn2
-  name: tts-voice-name-dbkn2
-  sex: Male
-  silicon: false
-  speaker: dbkn2
-
-- type: voice
-  id: Xrenoid
-  name: tts-voice-name-xrenoid
-  sex: Male
-  silicon: false
-  speaker: xrenoid
-
-- type: voice
-  id: Playboyztv
-  name: tts-voice-name-playboyztv
-  sex: Male
-  silicon: false
-  speaker: playboyztv
-
-- type: voice
-  id: Briman
-  name: tts-voice-name-briman
-  sex: Male
-  silicon: false
-  speaker: briman
-
-- type: voice
-  id: Father_grigori
-  name: tts-voice-name-father_grigori
-  sex: Male
-  silicon: false
-  speaker: father_grigori
-
-- type: voice
-  id: Kleiner
-  name: tts-voice-name-kleiner
-  sex: Male
-  silicon: false
-  speaker: kleiner
-
-- type: voice
-  id: Mossman
-  name: tts-voice-name-mossman
-  sex: Female
-  silicon: false
-  speaker: mossman
-
-- type: voice
-  id: Vance
-  name: tts-voice-name-vance
-  sex: Male
-  silicon: false
-  speaker: vance
-
-- type: voice
-  id: Alyx
-  name: tts-voice-name-alyx
-  sex: Female
-  silicon: false
-  speaker: alyx
-
-- type: voice
-  id: Gman
-  name: tts-voice-name-gman
-  sex: Male
-  silicon: false
-  speaker: gman
-
-- type: voice
-  id: Barni
-  name: tts-voice-name-barni
-  sex: Male
-  silicon: false
-  speaker: barni
-
-- type: voice
-  id: Neco
-  name: tts-voice-name-neco
-  sex: Female
-  silicon: false
-  speaker: neco
-
-- type: voice
-  id: Neco_arc_2
-  name: tts-voice-name-neco_arc_2
-  sex: Female
-  silicon: false
-  speaker: neco_arc_2
-
-- type: voice
-  id: Angry_neco_arc
-  name: tts-voice-name-angry_neco_arc
-  sex: Female
-  silicon: false
-  speaker: angry_neco_arc
-
-- type: voice
-  id: Villager
-  name: tts-voice-name-villager
-  sex: Male
-  silicon: true
-  speaker: villager
-
-- type: voice
-  id: Squidward
-  name: tts-voice-name-squidward
-  sex: Male
-  silicon: false
-  speaker: squidward
-
-- type: voice
-  id: Sentrybot
-  name: tts-voice-name-sentrybot
-  sex: Male
-  silicon: true
-  speaker: sentrybot
-
-- type: voice
-  id: Moira_brown
-  name: tts-voice-name-moira_brown
-  sex: Female
-  silicon: false
-  speaker: moira_brown
-
-- type: voice
-  id: Robert_maccready
-  name: tts-voice-name-robert_maccready
-  sex: Male
-  silicon: false
-  speaker: robert_maccready
-
-- type: voice
-  id: Threedog
-  name: tts-voice-name-threedog
-  sex: Male
-  silicon: false
-  speaker: threedog
-
-- type: voice
-  id: Threedog_radio
-  name: tts-voice-name-threedog_radio
-  sex: Male
-  silicon: false
-  speaker: threedog_radio
-
-- type: voice
-  id: Mister_handy_fl3
-  name: tts-voice-name-mister_handy_fl3
-  sex: Male
-  silicon: true
-  speaker: mister_handy_fl3
-
-- type: voice
-  id: Mister_gutsy_fl3
-  name: tts-voice-name-mister_gutsy_fl3
-  sex: Male
-  silicon: true
-  speaker: mister_gutsy_fl3
-
-- type: voice
-  id: Jericho_fl3
-  name: tts-voice-name-jericho_fl3
-  sex: Male
-  silicon: false
-  speaker: jericho_fl3
-
-- type: voice
-  id: Elder_lyons_fl3
-  name: tts-voice-name-elder_lyons_fl3
-  sex: Male
-  silicon: false
-  speaker: elder_lyons_fl3
-
-- type: voice
-  id: Sarah_lyons_fl3
-  name: tts-voice-name-sarah_lyons_fl3
-  sex: Female
-  silicon: false
-  speaker: sarah_lyons_fl3
-
-- type: voice
-  id: Colin_moriarty_fl3
-  name: tts-voice-name-colin_moriarty_fl3
-  sex: Male
-  silicon: false
-  speaker: colin_moriarty_fl3
-
-- type: voice
-  id: John_henry_eden_fl3
-  name: tts-voice-name-john_henry_eden_fl3
-  sex: Male
-  silicon: true
-  speaker: john_henry_eden_fl3
-
-- type: voice
-  id: Super_mutant_fl3
-  name: tts-voice-name-super_mutant_fl3
-  sex: Male
-  silicon: false
-  speaker: super_mutant_fl3
-
-- type: voice
-  id: Polina
-  name: tts-voice-name-polina
-  sex: Female
-  silicon: false
-  speaker: polina
-
-- type: voice
-  id: Romka
-  name: tts-voice-name-romka
-  sex: Male
-  silicon: false
-  speaker: romka
-
-- type: voice
-  id: Boris_petrov_father_tb
-  name: tts-voice-name-boris_petrov_father_tb
-  sex: Male
-  silicon: false
-  speaker: boris_petrov_father_tb
-
-- type: voice
-  id: Karina_petrova_tb
-  name: tts-voice-name-karina_petrova_tb
-  sex: Female
-  silicon: false
-  speaker: karina_petrova_tb
-
-- type: voice
-  id: Kate_smirnova_tb
-  name: tts-voice-name-kate_smirnova_tb
-  sex: Female
-  silicon: false
-  speaker: kate_smirnova_tb
-
-- type: voice
-  id: Semen_baburin_tb
-  name: tts-voice-name-semen_baburin_tb
-  sex: Male
-  silicon: false
-  speaker: semen_baburin_tb
-
-- type: voice
-  id: Tihonov_tb
-  name: tts-voice-name-tihonov_tb
-  sex: Male
-  silicon: false
-  speaker: tihonov_tb
-
-- type: voice
-  id: Cicero
-  name: tts-voice-name-cicero
-  sex: Male
-  silicon: false
-  speaker: cicero
-
-- type: voice
-  id: Sheogorath
-  name: tts-voice-name-sheogorath
-  sex: Male
-  silicon: false
-  speaker: sheogorath
-
-- type: voice
-  id: Kodlakwhitemane
-  name: tts-voice-name-kodlakwhitemane
-  sex: Male
-  silicon: false
-  speaker: kodlakwhitemane
-
-- type: voice
-  id: Khajiit
-  name: tts-voice-name-khajiit
-  sex: Male
-  silicon: false
-  speaker: khajiit
-
-- type: voice
-  id: Elenwen
-  name: tts-voice-name-elenwen
-  sex: Female
-  silicon: false
-  speaker: elenwen
-
-- type: voice
-  id: Emperor
-  name: tts-voice-name-emperor
-  sex: Male
-  silicon: false
-  speaker: emperor
-
-- type: voice
-  id: Guard
-  name: tts-voice-name-guard
-  sex: Male
-  silicon: false
-  speaker: guard
-
-- type: voice
-  id: Hagraven
-  name: tts-voice-name-hagraven
-  sex: Male
-  silicon: false
-  speaker: hagraven
-
-- type: voice
-  id: Hermaeus_mora
-  name: tts-voice-name-hermaeus_mora
-  sex: Male
-  silicon: false
-  speaker: hermaeus_mora
-
-- type: voice
-  id: Nord
-  name: tts-voice-name-nord
-  sex: Male
-  silicon: false
-  speaker: nord
-
-- type: voice
-  id: Ulfric
-  name: tts-voice-name-ulfric
-  sex: Male
-  silicon: false
-  speaker: ulfric
-
-- type: voice
-  id: Astrid
-  name: tts-voice-name-astrid
-  sex: Female
-  silicon: false
-  speaker: astrid
-
-- type: voice
-  id: Maven
-  name: tts-voice-name-maven
-  sex: Female
-  silicon: false
-  speaker: maven
-
-- type: voice
-  id: Nazir
-  name: tts-voice-name-nazir
-  sex: Male
-  silicon: false
-  speaker: nazir
-
-- type: voice
-  id: Female_commander
-  name: tts-voice-name-female_commander
-  sex: Female
-  silicon: false
-  speaker: female_commander
-
-- type: voice
-  id: Lord_harkon
-  name: tts-voice-name-lord_harkon
-  sex: Male
-  silicon: false
-  speaker: lord_harkon
-
-- type: voice
-  id: Serana
-  name: tts-voice-name-serana
-  sex: Female
-  silicon: false
-  speaker: serana
-
-- type: voice
-  id: Glados
-  name: tts-voice-name-glados
-  sex: Female
-  silicon: true
-  speaker: glados
-
-- type: voice
-  id: Adventure_core
-  name: tts-voice-name-adventure_core
-  sex: Male
-  silicon: true
-  speaker: adventure_core
-
-- type: voice
-  id: Fact_core
-  name: tts-voice-name-fact_core
-  sex: Male
-  silicon: true
-  speaker: fact_core
-
-- type: voice
-  id: Space_core
-  name: tts-voice-name-space_core
-  sex: Male
-  silicon: true
-  speaker: space_core
-
-- type: voice
-  id: Turret_floor
-  name: tts-voice-name-turret_floor
-  sex: Female
-  silicon: true
-  speaker: turret_floor
-
-- type: voice
-  id: Geralt
-  name: tts-voice-name-geralt
-  sex: Male
-  silicon: false
-  speaker: geralt
-
-- type: voice
-  id: Cirilla
-  name: tts-voice-name-cirilla
-  sex: Female
-  silicon: false
-  speaker: cirilla
-
-- type: voice
-  id: Cerys
-  name: tts-voice-name-cerys
-  sex: Female
-  silicon: false
-  speaker: cerys
-
-- type: voice
-  id: Lambert
-  name: tts-voice-name-lambert
-  sex: Male
-  silicon: false
-  speaker: lambert
-
-- type: voice
-  id: Triss
-  name: tts-voice-name-triss
-  sex: Female
-  silicon: false
-  speaker: triss
-
-- type: voice
-  id: Kovir_nobleman
-  name: tts-voice-name-kovir_nobleman
-  sex: Male
-  silicon: false
-  speaker: kovir_nobleman
-
-- type: voice
-  id: Zoltan_chivay
-  name: tts-voice-name-zoltan_chivay
-  sex: Male
-  silicon: false
-  speaker: zoltan_chivay
-
-- type: voice
-  id: Vesemir
-  name: tts-voice-name-vesemir
-  sex: Male
-  silicon: false
-  speaker: vesemir
-
-- type: voice
-  id: Guillaume_de_launfal
-  name: tts-voice-name-guillaume_de_launfal
-  sex: Male
-  silicon: false
-  speaker: guillaume_de_launfal
-
-- type: voice
-  id: Philippa_eilhart
-  name: tts-voice-name-philippa_eilhart
-  sex: Female
-  silicon: false
-  speaker: philippa_eilhart
-
-- type: voice
-  id: Ewald_borsodi
-  name: tts-voice-name-ewald_borsodi
-  sex: Male
-  silicon: false
-  speaker: ewald_borsodi
-
-- type: voice
-  id: Dandelion
-  name: tts-voice-name-dandelion
-  sex: Male
-  silicon: false
-  speaker: dandelion
-
-- type: voice
-  id: Shani
-  name: tts-voice-name-shani
-  sex: Female
-  silicon: false
-  speaker: shani
-
-- type: voice
-  id: Azir
-  name: tts-voice-name-azir
-  sex: Male
-  silicon: false
-  speaker: azir
-
-- type: voice
-  id: Ekko
-  name: tts-voice-name-ekko
-  sex: Male
-  silicon: false
-  speaker: ekko
-
-- type: voice
-  id: Twitch
-  name: tts-voice-name-twitch
-  sex: Male
-  silicon: false
-  speaker: twitch
-
-- type: voice
-  id: Ziggs
-  name: tts-voice-name-ziggs
-  sex: Male
-  silicon: false
-  speaker: ziggs
-
-- type: voice
-  id: Caitlyn
-  name: tts-voice-name-caitlyn
-  sex: Female
-  silicon: false
-  speaker: caitlyn
-
-- type: voice
-  id: Arthas
-  name: tts-voice-name-arthas
-  sex: Male
-  silicon: false
-  speaker: arthas
-
-- type: voice
-  id: Illidan
-  name: tts-voice-name-illidan
-  sex: Male
-  silicon: false
-  speaker: illidan
-
-- type: voice
-  id: Rexxar
-  name: tts-voice-name-rexxar
-  sex: Male
-  silicon: false
-  speaker: rexxar
-
-- type: voice
-  id: Voljin
-  name: tts-voice-name-voljin
-  sex: Male
-  silicon: false
-  speaker: voljin
-
-- type: voice
-  id: Bandit
-  name: tts-voice-name-bandit
-  sex: Male
-  silicon: false
-  speaker: bandit
-
-- type: voice
-  id: Forester
-  name: tts-voice-name-forester
-  sex: Male
-  silicon: false
-  speaker: forester
-
-- type: voice
-  id: Sidorovich
-  name: tts-voice-name-sidorovich
-  sex: Male
-  silicon: false
-  speaker: sidorovich
-
-- type: voice
-  id: Strelok
-  name: tts-voice-name-strelok
-  sex: Male
-  silicon: false
-  speaker: strelok
-
-- type: voice
-  id: Tracer
-  name: tts-voice-name-tracer
-  sex: Female
-  silicon: false
-  speaker: tracer
-
-- type: voice
-  id: Soldier
-  name: tts-voice-name-soldier
-  sex: Male
-  silicon: false
-  speaker: soldier
-
-- type: voice
-  id: Engineer
-  name: tts-voice-name-engineer
-  sex: Male
-  silicon: false
-  speaker: engineer
-
-- type: voice
-  id: Heavy
-  name: tts-voice-name-heavy
-  sex: Male
-  silicon: false
-  speaker: heavy
-
-- type: voice
-  id: Medic
-  name: tts-voice-name-medic
-  sex: Male
-  silicon: false
-  speaker: medic
-
-- type: voice
-  id: Demoman
-  name: tts-voice-name-demoman
-  sex: Male
-  silicon: false
-  speaker: demoman
-
-- type: voice
-  id: Sniper
-  name: tts-voice-name-sniper
-  sex: Male
-  silicon: false
-  speaker: sniper
-
-- type: voice
-  id: Spy
-  name: tts-voice-name-spy
-  sex: Male
-  silicon: false
-  speaker: spy
-
-- type: voice
-  id: Punisher
-  name: tts-voice-name-punisher
-  sex: Male
-  silicon: false
-  speaker: punisher
-
-- type: voice
-  id: Johnny
-  name: tts-voice-name-johnny
-  sex: Male
-  silicon: false
-  speaker: johnny
-
-- type: voice
-  id: Panam
-  name: tts-voice-name-panam
-  sex: Female
-  silicon: false
-  speaker: panam
-
-- type: voice
-  id: V_female
-  name: tts-voice-name-v_female
-  sex: Female
-  silicon: false
-  speaker: v_female
-
-- type: voice
-  id: Judy
-  name: tts-voice-name-judy
-  sex: Female
-  silicon: false
-  speaker: judy
-
-- type: voice
-  id: Mitch
-  name: tts-voice-name-mitch
-  sex: Male
-  silicon: false
-  speaker: mitch
-
-- type: voice
-  id: Skippy
-  name: tts-voice-name-skippy
-  sex: Male
-  silicon: true
-  speaker: skippy
-
-- type: voice
-  id: Jackie
-  name: tts-voice-name-jackie
-  sex: Male
-  silicon: false
-  speaker: jackie
-
-- type: voice
-  id: Maiko
-  name: tts-voice-name-maiko
-  sex: Female
-  silicon: false
-  speaker: maiko
-
-- type: voice
-  id: Brendan
-  name: tts-voice-name-brendan
-  sex: Male
-  silicon: true
-  speaker: brendan
-
-- type: voice
-  id: Nancy_hartley
-  name: tts-voice-name-nancy_hartley
-  sex: Female
-  silicon: false
-  speaker: nancy_hartley
-
-- type: voice
-  id: Oswald_forrest
-  name: tts-voice-name-oswald_forrest
-  sex: Male
-  silicon: false
-  speaker: oswald_forrest
-
-- type: voice
-  id: Steve
-  name: tts-voice-name-steve
-  sex: Male
-  silicon: false
-  speaker: steve
-
-- type: voice
-  id: Dornan
-  name: tts-voice-name-dornan
-  sex: Male
-  silicon: false
-  speaker: dornan
-
-- type: voice
-  id: Officer_enclave
-  name: tts-voice-name-officer_enclave
-  sex: Male
-  silicon: false
-  speaker: officer_enclave
-
-- type: voice
-  id: Richardson
-  name: tts-voice-name-richardson
-  sex: Male
-  silicon: false
-  speaker: richardson
-
-- type: voice
-  id: Butch
-  name: tts-voice-name-butch
-  sex: Male
-  silicon: false
-  speaker: butch
-
-- type: voice
-  id: Marcus
-  name: tts-voice-name-marcus
-  sex: Male
-  silicon: false
-  speaker: marcus
-
-- type: voice
-  id: Sulik
-  name: tts-voice-name-sulik
-  sex: Male
-  silicon: false
-  speaker: sulik
-
-- type: voice
-  id: Myron
-  name: tts-voice-name-myron
-  sex: Male
-  silicon: false
-  speaker: myron
-
-- type: voice
-  id: Good_thalya
-  name: tts-voice-name-good_thalya
-  sex: Female
-  silicon: false
-  speaker: good_thalya
-
-- type: voice
-  id: Evil_thalya
-  name: tts-voice-name-evil_thalya
-  sex: Female
-  silicon: false
-  speaker: evil_thalya
-
-- type: voice
-  id: Narrator_d3
-  name: tts-voice-name-narrator_d3
-  sex: Male
-  silicon: false
-  speaker: narrator_d3
-
-- type: voice
-  id: Dude
-  name: tts-voice-name-dude
-  sex: Male
-  silicon: false
-  speaker: dude
-
-- type: voice
-  id: Anduin
-  name: tts-voice-name-anduin
-  sex: Male
-  silicon: false
-  speaker: anduin
-
-- type: voice
-  id: Brukan
-  name: tts-voice-name-brukan
-  sex: Male
-  silicon: false
-  speaker: brukan
-
-- type: voice
-  id: Garrosh
-  name: tts-voice-name-garrosh
-  sex: Male
-  silicon: false
-  speaker: garrosh
-
-- type: voice
-  id: Jaina
-  name: tts-voice-name-jaina
-  sex: Female
-  silicon: false
-  speaker: jaina
-
-- type: voice
-  id: Uther_hs
-  name: tts-voice-name-uther_hs
-  sex: Male
-  silicon: false
-  speaker: uther_hs
-
-- type: voice
-  id: Adjutant
-  name: tts-voice-name-adjutant
-  sex: Female
-  silicon: true
-  speaker: adjutant
-
-- type: voice
-  id: Hanson
-  name: tts-voice-name-hanson
-  sex: Female
-  silicon: false
-  speaker: hanson
-
-- type: voice
-  id: Bralik
-  name: tts-voice-name-bralik
-  sex: Male
-  silicon: false
-  speaker: bralik
-
-- type: voice
-  id: Horner
-  name: tts-voice-name-horner
-  sex: Male
-  silicon: false
-  speaker: horner
-
-- type: voice
-  id: Tosh
-  name: tts-voice-name-tosh
-  sex: Male
-  silicon: false
-  speaker: tosh
-
-- type: voice
-  id: Tychus
-  name: tts-voice-name-tychus
-  sex: Male
-  silicon: false
-  speaker: tychus
-
-- type: voice
-  id: Amitkakkar
-  name: tts-voice-name-amitkakkar
-  sex: Male
-  silicon: false
-  speaker: amitkakkar
-
-- type: voice
-  id: Eleazarfig
-  name: tts-voice-name-eleazarfig
-  sex: Male
-  silicon: false
-  speaker: eleazarfig
-
-- type: voice
-  id: Ernielark
-  name: tts-voice-name-ernielark
-  sex: Male
-  silicon: false
-  speaker: ernielark
-
-- type: voice
-  id: Ignatiaflootravel
-  name: tts-voice-name-ignatiaflootravel
-  sex: Female
-  silicon: false
-  speaker: ignatiaflootravel
-
-- type: voice
-  id: Lodgok
-  name: tts-voice-name-lodgok
-  sex: Male
-  silicon: false
-  speaker: lodgok
-
-- type: voice
-  id: Phineasblack
-  name: tts-voice-name-phineasblack
-  sex: Male
-  silicon: false
-  speaker: phineasblack
-
-- type: voice
-  id: Ranrak
-  name: tts-voice-name-ranrak
-  sex: Male
-  silicon: false
-  speaker: ranrak
-
-- type: voice
-  id: Victorrookwood
-  name: tts-voice-name-victorrookwood
-  sex: Male
-  silicon: false
-  speaker: victorrookwood
-
-- type: voice
-  id: Zenobianoke
-  name: tts-voice-name-zenobianoke
-  sex: Female
-  silicon: false
-  speaker: zenobianoke
-
-- type: voice
-  id: Gladwinmoon
-  name: tts-voice-name-gladwinmoon
-  sex: Male
-  silicon: false
-  speaker: gladwinmoon
-
-- type: voice
-  id: Matildaweasley
-  name: tts-voice-name-matildaweasley
-  sex: Female
-  silicon: false
-  speaker: matildaweasley
-
-- type: voice
-  id: Natsaionai
-  name: tts-voice-name-natsaionai
-  sex: Female
-  silicon: false
-  speaker: natsaionai
-
-- type: voice
-  id: Ominisgaunt
-  name: tts-voice-name-ominisgaunt
-  sex: Male
-  silicon: false
-  speaker: ominisgaunt
-
-- type: voice
-  id: Poppysweeting
-  name: tts-voice-name-poppysweeting
-  sex: Female
-  silicon: false
-  speaker: poppysweeting
-
-- type: voice
-  id: Generic_goblin_c
-  name: tts-voice-name-generic_goblin_c
-  sex: Male
-  silicon: false
-  speaker: generic_goblin_c
-
-- type: voice
-  id: Dinah_hecat
-  name: tts-voice-name-dinah_hecat
-  sex: Female
-  silicon: false
-  speaker: dinah_hecat
-
-- type: voice
-  id: Aesop_sharp
-  name: tts-voice-name-aesop_sharp
-  sex: Male
-  silicon: false
-  speaker: aesop_sharp
-
-- type: voice
-  id: Abraham_ronen
-  name: tts-voice-name-abraham_ronen
-  sex: Male
-  silicon: false
-  speaker: abraham_ronen
-
-- type: voice
-  id: Samantha_dale
-  name: tts-voice-name-samantha_dale
-  sex: Female
-  silicon: false
-  speaker: samantha_dale
-
-- type: voice
-  id: Sirona_ryan
-  name: tts-voice-name-sirona_ryan
-  sex: Female
-  silicon: false
-  speaker: sirona_ryan
-
-- type: voice
-  id: Sophronia_franklin
-  name: tts-voice-name-sophronia_franklin
-  sex: Female
-  silicon: false
-  speaker: sophronia_franklin
-
-- type: voice
-  id: Everett_clopton
-  name: tts-voice-name-everett_clopton
-  sex: Male
-  silicon: false
-  speaker: everett_clopton
-
-- type: voice
-  id: Generic_goblin_b
-  name: tts-voice-name-generic_goblin_b
-  sex: Male
-  silicon: false
-  speaker: generic_goblin_b
-
-- type: voice
-  id: Sanctuary_house_elf
-  name: tts-voice-name-sanctuary_house_elf
-  sex: Male
-  silicon: false
-  speaker: sanctuary_house_elf
-
-- type: voice
-  id: Abaddon_dota_2
-  name: tts-voice-name-abaddon_dota_2
-  sex: Male
-  silicon: false
-  speaker: abaddon_dota_2
-
-- type: voice
-  id: Alchemist_dota_2
-  name: tts-voice-name-alchemist_dota_2
-  sex: Male
-  silicon: false
-  speaker: alchemist_dota_2
-
-- type: voice
-  id: Anti-mage_dota_2
-  name: tts-voice-name-anti-mage_dota_2
-  sex: Male
-  silicon: false
-  speaker: anti-mage_dota_2
-
-- type: voice
-  id: Arc_warden_dota_2
-  name: tts-voice-name-arc_warden_dota_2
-  sex: Male
-  silicon: false
-  speaker: arc_warden_dota_2
-
-- type: voice
-  id: Batrider_dota_2
-  name: tts-voice-name-batrider_dota_2
-  sex: Male
-  silicon: false
-  speaker: batrider_dota_2
-
-- type: voice
-  id: Bloodseeker_dota_2
-  name: tts-voice-name-bloodseeker_dota_2
-  sex: Male
-  silicon: false
-  speaker: bloodseeker_dota_2
-
-- type: voice
-  id: Bounty_hunter_dota_2
-  name: tts-voice-name-bounty_hunter_dota_2
-  sex: Male
-  silicon: false
-  speaker: bounty_hunter_dota_2
-
-- type: voice
-  id: Bristleback_dota_2
-  name: tts-voice-name-bristleback_dota_2
-  sex: Male
-  silicon: false
-  speaker: bristleback_dota_2
-
-- type: voice
-  id: Broodmother_dota_2
-  name: tts-voice-name-broodmother_dota_2
-  sex: Female
-  silicon: false
-  speaker: broodmother_dota_2
-
-- type: voice
-  id: Centaur_warrunner_dota_2
-  name: tts-voice-name-centaur_warrunner_dota_2
-  sex: Male
-  silicon: false
-  speaker: centaur_warrunner_dota_2
-
-- type: voice
-  id: Clinkz_dota_2
-  name: tts-voice-name-clinkz_dota_2
-  sex: Male
-  silicon: false
-  speaker: clinkz_dota_2
-
-- type: voice
-  id: Clockwerk_dota_2
-  name: tts-voice-name-clockwerk_dota_2
-  sex: Male
-  silicon: true
-  speaker: clockwerk_dota_2
-
-- type: voice
-  id: Crystal_maiden_dota_2
-  name: tts-voice-name-crystal_maiden_dota_2
-  sex: Female
-  silicon: false
-  speaker: crystal_maiden_dota_2
-
-- type: voice
-  id: Dazzle_dota_2
-  name: tts-voice-name-dazzle_dota_2
-  sex: Male
-  silicon: false
-  speaker: dazzle_dota_2
-
-- type: voice
-  id: Disruptor_dota_2
-  name: tts-voice-name-disruptor_dota_2
-  sex: Male
-  silicon: false
-  speaker: disruptor_dota_2
-
-- type: voice
-  id: Doom_dota_2
-  name: tts-voice-name-doom_dota_2
-  sex: Male
-  silicon: false
-  speaker: doom_dota_2
-
-- type: voice
-  id: Dragon_knight_dota_2
-  name: tts-voice-name-dragon_knight_dota_2
-  sex: Male
-  silicon: false
-  speaker: dragon_knight_dota_2
-
-- type: voice
-  id: Dragon_knight_dragon_dota_2
-  name: tts-voice-name-dragon_knight_dragon_dota_2
-  sex: Male
-  silicon: false
-  speaker: dragon_knight_dragon_dota_2
-
-- type: voice
-  id: Drow_ranger_dota_2
-  name: tts-voice-name-drow_ranger_dota_2
-  sex: Female
-  silicon: false
-  speaker: drow_ranger_dota_2
-
-- type: voice
-  id: Earthshaker_dota_2
-  name: tts-voice-name-earthshaker_dota_2
-  sex: Male
-  silicon: false
-  speaker: earthshaker_dota_2
-
-- type: voice
-  id: Ember_spirit_dota_2
-  name: tts-voice-name-ember_spirit_dota_2
-  sex: Male
-  silicon: false
-  speaker: ember_spirit_dota_2
-
-- type: voice
-  id: Enigma_dota_2
-  name: tts-voice-name-enigma_dota_2
-  sex: Male
-  silicon: false
-  speaker: enigma_dota_2
-
-- type: voice
-  id: Gyrocopter_dota_2
-  name: tts-voice-name-gyrocopter_dota_2
-  sex: Male
-  silicon: false
-  speaker: gyrocopter_dota_2
-
-- type: voice
-  id: Huskar_dota_2
-  name: tts-voice-name-huskar_dota_2
-  sex: Male
-  silicon: false
-  speaker: huskar_dota_2
-
-- type: voice
-  id: Invoker_dota_2
-  name: tts-voice-name-invoker_dota_2
-  sex: Male
-  silicon: false
-  speaker: invoker_dota_2
-
-- type: voice
-  id: Juggernaut_dota_2
-  name: tts-voice-name-juggernaut_dota_2
-  sex: Male
-  silicon: false
-  speaker: juggernaut_dota_2
-
-- type: voice
-  id: Keeper_of_the_light_dota_2
-  name: tts-voice-name-keeper_of_the_light_dota_2
-  sex: Male
-  silicon: false
-  speaker: keeper_of_the_light_dota_2
-
-- type: voice
-  id: Kunkka_dota_2
-  name: tts-voice-name-kunkka_dota_2
-  sex: Male
-  silicon: false
-  speaker: kunkka_dota_2
-
-- type: voice
-  id: Legion_commander_demon_dota_2
-  name: tts-voice-name-legion_commander_demon_dota_2
-  sex: Female
-  silicon: false
-  speaker: legion_commander_demon_dota_2
-
-- type: voice
-  id: Legion_commander_dota_2
-  name: tts-voice-name-legion_commander_dota_2
-  sex: Female
-  silicon: false
-  speaker: legion_commander_dota_2
-
-- type: voice
-  id: Lich_dota_2
-  name: tts-voice-name-lich_dota_2
-  sex: Male
-  silicon: false
-  speaker: lich_dota_2
-
-- type: voice
-  id: Lina_dota_2
-  name: tts-voice-name-lina_dota_2
-  sex: Female
-  silicon: false
-  speaker: lina_dota_2
-
-- type: voice
-  id: Luna_dota_2
-  name: tts-voice-name-luna_dota_2
-  sex: Female
-  silicon: false
-  speaker: luna_dota_2
-
-- type: voice
-  id: Lycan_dota_2
-  name: tts-voice-name-lycan_dota_2
-  sex: Male
-  silicon: false
-  speaker: lycan_dota_2
-
-- type: voice
-  id: Lycan_wolf_dota_2
-  name: tts-voice-name-lycan_wolf_dota_2
-  sex: Male
-  silicon: false
-  speaker: lycan_wolf_dota_2
-
-- type: voice
-  id: Meepo_dota_2
-  name: tts-voice-name-meepo_dota_2
-  sex: Male
-  silicon: false
-  speaker: meepo_dota_2
-
-- type: voice
-  id: Mirana_dota_2
-  name: tts-voice-name-mirana_dota_2
-  sex: Female
-  silicon: false
-  speaker: mirana_dota_2
-
-- type: voice
-  id: Monkey_king_crown_dota_2
-  name: tts-voice-name-monkey_king_crown_dota_2
-  sex: Male
-  silicon: false
-  speaker: monkey_king_crown_dota_2
-
-- type: voice
-  id: Monkey_king_dota_2
-  name: tts-voice-name-monkey_king_dota_2
-  sex: Male
-  silicon: false
-  speaker: monkey_king_dota_2
-
-- type: voice
-  id: Necrophos_dota_2
-  name: tts-voice-name-necrophos_dota_2
-  sex: Male
-  silicon: false
-  speaker: necrophos_dota_2
-
-- type: voice
-  id: Nyx_assassin_dota_2
-  name: tts-voice-name-nyx_assassin_dota_2
-  sex: Male
-  silicon: false
-  speaker: nyx_assassin_dota_2
-
-- type: voice
-  id: Omniknight_dota_2
-  name: tts-voice-name-omniknight_dota_2
-  sex: Male
-  silicon: false
-  speaker: omniknight_dota_2
-
-- type: voice
-  id: Outworld_destroyer_dota_2
-  name: tts-voice-name-outworld_destroyer_dota_2
-  sex: Male
-  silicon: false
-  speaker: outworld_destroyer_dota_2
-
-- type: voice
-  id: Phantom_assassin_arcana_dota_2
-  name: tts-voice-name-phantom_assassin_arcana_dota_2
-  sex: Female
-  silicon: false
-  speaker: phantom_assassin_arcana_dota_2
-
-- type: voice
-  id: Phantom_assassin_dota_2
-  name: tts-voice-name-phantom_assassin_dota_2
-  sex: Female
-  silicon: false
-  speaker: phantom_assassin_dota_2
-
-- type: voice
-  id: Phantom_lancer_dota_2
-  name: tts-voice-name-phantom_lancer_dota_2
-  sex: Male
-  silicon: false
-  speaker: phantom_lancer_dota_2
-
-- type: voice
-  id: Pudge_dota_2
-  name: tts-voice-name-pudge_dota_2
-  sex: Male
-  silicon: false
-  speaker: pudge_dota_2
-
-- type: voice
-  id: Queen_of_pain_dota_2
-  name: tts-voice-name-queen_of_pain_dota_2
-  sex: Female
-  silicon: false
-  speaker: queen_of_pain_dota_2
-
-- type: voice
-  id: Razor_dota_2
-  name: tts-voice-name-razor_dota_2
-  sex: Male
-  silicon: true
-  speaker: razor_dota_2
-
-- type: voice
-  id: Riki_dota_2
-  name: tts-voice-name-riki_dota_2
-  sex: Male
-  silicon: false
-  speaker: riki_dota_2
-
-- type: voice
-  id: Rubick_dota_2
-  name: tts-voice-name-rubick_dota_2
-  sex: Male
-  silicon: false
-  speaker: rubick_dota_2
-
-- type: voice
-  id: Sand_king_dota_2
-  name: tts-voice-name-sand_king_dota_2
-  sex: Male
-  silicon: false
-  speaker: sand_king_dota_2
-
-- type: voice
-  id: Shadow_fiend_dota_2
-  name: tts-voice-name-shadow_fiend_dota_2
-  sex: Male
-  silicon: false
-  speaker: shadow_fiend_dota_2
-
-- type: voice
-  id: Shadow_shaman_dota_2
-  name: tts-voice-name-shadow_shaman_dota_2
-  sex: Male
-  silicon: false
-  speaker: shadow_shaman_dota_2
-
-- type: voice
-  id: Skywrath_mage_dota_2
-  name: tts-voice-name-skywrath_mage_dota_2
-  sex: Male
-  silicon: false
-  speaker: skywrath_mage_dota_2
-
-- type: voice
-  id: Slardar_dota_2
-  name: tts-voice-name-slardar_dota_2
-  sex: Male
-  silicon: false
-  speaker: slardar_dota_2
-
-- type: voice
-  id: Slark_dota_2
-  name: tts-voice-name-slark_dota_2
-  sex: Male
-  silicon: false
-  speaker: slark_dota_2
-
-- type: voice
-  id: Spirit_breaker_dota_2
-  name: tts-voice-name-spirit_breaker_dota_2
-  sex: Male
-  silicon: false
-  speaker: spirit_breaker_dota_2
-
-- type: voice
-  id: Storm_spirit_dota_2
-  name: tts-voice-name-storm_spirit_dota_2
-  sex: Male
-  silicon: false
-  speaker: storm_spirit_dota_2
-
-- type: voice
-  id: Sven_dota_2
-  name: tts-voice-name-sven_dota_2
-  sex: Male
-  silicon: false
-  speaker: sven_dota_2
-
-- type: voice
-  id: Templar_assassin_dota_2
-  name: tts-voice-name-templar_assassin_dota_2
-  sex: Female
-  silicon: false
-  speaker: templar_assassin_dota_2
-
-- type: voice
-  id: Tidehunter_dota_2
-  name: tts-voice-name-tidehunter_dota_2
-  sex: Male
-  silicon: false
-  speaker: tidehunter_dota_2
-
-- type: voice
-  id: Treant_protector_dota_2
-  name: tts-voice-name-treant_protector_dota_2
-  sex: Male
-  silicon: false
-  speaker: treant_protector_dota_2
-
-- type: voice
-  id: Underlord_dota_2
-  name: tts-voice-name-underlord_dota_2
-  sex: Male
-  silicon: false
-  speaker: underlord_dota_2
-
-- type: voice
-  id: Ursa_dota_2
-  name: tts-voice-name-ursa_dota_2
-  sex: Male
-  silicon: false
-  speaker: ursa_dota_2
-
-- type: voice
-  id: Windranger_dota_2
-  name: tts-voice-name-windranger_dota_2
-  sex: Female
-  silicon: false
-  speaker: windranger_dota_2
-
-- type: voice
-  id: Winter_wyvern_dota_2
-  name: tts-voice-name-winter_wyvern_dota_2
-  sex: Female
-  silicon: false
-  speaker: winter_wyvern_dota_2
-
-- type: voice
-  id: Witch_doctor_dota_2
-  name: tts-voice-name-witch_doctor_dota_2
-  sex: Male
-  silicon: false
-  speaker: witch_doctor_dota_2
-
-- type: voice
-  id: Wraith_king_dota_2
-  name: tts-voice-name-wraith_king_dota_2
-  sex: Male
-  silicon: false
-  speaker: wraith_king_dota_2
-
-- type: voice
-  id: Zeus_dota_2
-  name: tts-voice-name-zeus_dota_2
-  sex: Male
-  silicon: false
-  speaker: zeus_dota_2
-
-- type: voice
-  id: Mita
-  name: tts-voice-name-mita
-  sex: Female
-  silicon: false
-  speaker: mita
-
-- type: voice
-  id: Mitadream
-  name: tts-voice-name-mitadream
-  sex: Female
-  silicon: false
-  speaker: mitadream
-
-- type: voice
-  id: Mitaghost
-  name: tts-voice-name-mitaghost
-  sex: Female
-  silicon: false
-  speaker: mitaghost
-
-- type: voice
-  id: Mitakind
-  name: tts-voice-name-mitakind
-  sex: Female
-  silicon: false
-  speaker: mitakind
-
-- type: voice
-  id: Mitashorthairs
-  name: tts-voice-name-mitashorthairs
-  sex: Female
-  silicon: false
-  speaker: mitashorthairs
-
-- type: voice
-  id: Chaos_marines_cultists_dow
-  name: tts-voice-name-chaos_marines_cultists_dow
-  sex: Male
-  silicon: false
-  speaker: chaos_marines_cultists_dow
-
-- type: voice
-  id: Chaos_marines_dow
-  name: tts-voice-name-chaos_marines_dow
-  sex: Male
-  silicon: false
-  speaker: chaos_marines_dow
-
-- type: voice
-  id: Chaos_marines_lord_dow
-  name: tts-voice-name-chaos_marines_lord_dow
-  sex: Male
-  silicon: false
-  speaker: chaos_marines_lord_dow
-
-- type: voice
-  id: Chaos_marines_sorceror_dow
-  name: tts-voice-name-chaos_marines_sorceror_dow
-  sex: Male
-  silicon: false
-  speaker: chaos_marines_sorceror_dow
-
-- type: voice
-  id: Dark_eldar_archon_dow
-  name: tts-voice-name-dark_eldar_archon_dow
-  sex: Male
-  silicon: false
-  speaker: dark_eldar_archon_dow
-
-- type: voice
-  id: Dark_eldar_mandrake_dow
-  name: tts-voice-name-dark_eldar_mandrake_dow
-  sex: Male
-  silicon: false
-  speaker: dark_eldar_mandrake_dow
-
-- type: voice
-  id: Dark_eldar_warrior_dow
-  name: tts-voice-name-dark_eldar_warrior_dow
-  sex: Male
-  silicon: false
-  speaker: dark_eldar_warrior_dow
-
-- type: voice
-  id: Dark_eldar_wych_dow
-  name: tts-voice-name-dark_eldar_wych_dow
-  sex: Female
-  silicon: false
-  speaker: dark_eldar_wych_dow
-
-- type: voice
-  id: Eldar_dow
-  name: tts-voice-name-eldar_dow
-  sex: Female
-  silicon: false
-  speaker: eldar_dow
-
-- type: voice
-  id: Eldar_farseer_dow
-  name: tts-voice-name-eldar_farseer_dow
-  sex: Female
-  silicon: false
-  speaker: eldar_farseer_dow
-
-- type: voice
-  id: Eldar_fire_dragon_dow
-  name: tts-voice-name-eldar_fire_dragon_dow
-  sex: Female
-  silicon: false
-  speaker: eldar_fire_dragon_dow
-
-- type: voice
-  id: Eldar_warlock_dow
-  name: tts-voice-name-eldar_warlock_dow
-  sex: Female
-  silicon: false
-  speaker: eldar_warlock_dow
-
-- type: voice
-  id: Guard_assassin_dow
-  name: tts-voice-name-guard_assassin_dow
-  sex: Male
-  silicon: false
-  speaker: guard_assassin_dow
-
-- type: voice
-  id: Guard_captain_dow
-  name: tts-voice-name-guard_captain_dow
-  sex: Male
-  silicon: false
-  speaker: guard_captain_dow
-
-- type: voice
-  id: Guard_commissar_dow
-  name: tts-voice-name-guard_commissar_dow
-  sex: Male
-  silicon: false
-  speaker: guard_commissar_dow
-
-- type: voice
-  id: Guard_enginseer_dow
-  name: tts-voice-name-guard_enginseer_dow
-  sex: Male
-  silicon: false
-  speaker: guard_enginseer_dow
-
-- type: voice
-  id: Guard_guardsman_sergeant_dow
-  name: tts-voice-name-guard_guardsman_sergeant_dow
-  sex: Male
-  silicon: false
-  speaker: guard_guardsman_sergeant_dow
-
-- type: voice
-  id: Guard_heavy_weapons_platoon_dow
-  name: tts-voice-name-guard_heavy_weapons_platoon_dow
-  sex: Male
-  silicon: false
-  speaker: guard_heavy_weapons_platoon_dow
-
-- type: voice
-  id: Guard_karskin_dow
-  name: tts-voice-name-guard_karskin_dow
-  sex: Male
-  silicon: false
-  speaker: guard_karskin_dow
-
-- type: voice
-  id: Guard_ogryn_dow
-  name: tts-voice-name-guard_ogryn_dow
-  sex: Male
-  silicon: false
-  speaker: guard_ogryn_dow
-
-- type: voice
-  id: Guard_priest_dow
-  name: tts-voice-name-guard_priest_dow
-  sex: Male
-  silicon: false
-  speaker: guard_priest_dow
-
-- type: voice
-  id: Guard_psyker_dow
-  name: tts-voice-name-guard_psyker_dow
-  sex: Male
-  silicon: false
-  speaker: guard_psyker_dow
-
-- type: voice
-  id: Orks_dow
-  name: tts-voice-name-orks_dow
-  sex: Male
-  silicon: false
-  speaker: orks_dow
-
-- type: voice
-  id: Orks_flashgitznobs_dow
-  name: tts-voice-name-orks_flashgitznobs_dow
-  sex: Male
-  silicon: false
-  speaker: orks_flashgitznobs_dow
-
-- type: voice
-  id: Orks_grots_dow
-  name: tts-voice-name-orks_grots_dow
-  sex: Male
-  silicon: false
-  speaker: orks_grots_dow
-
-- type: voice
-  id: Orks_warboss_dow
-  name: tts-voice-name-orks_warboss_dow
-  sex: Male
-  silicon: false
-  speaker: orks_warboss_dow
-
-- type: voice
-  id: Sisters_battle_sister_dow
-  name: tts-voice-name-sisters_battle_sister_dow
-  sex: Female
-  silicon: false
-  speaker: sisters_battle_sister_dow
-
-- type: voice
-  id: Sisters_missionary_dow
-  name: tts-voice-name-sisters_missionary_dow
-  sex: Male
-  silicon: false
-  speaker: sisters_missionary_dow
-
-- type: voice
-  id: Space_marines_2_dow
-  name: tts-voice-name-space_marines_2_dow
-  sex: Male
-  silicon: false
-  speaker: space_marines_2_dow
-
-- type: voice
-  id: Space_marines_chaplain_dow
-  name: tts-voice-name-space_marines_chaplain_dow
-  sex: Male
-  silicon: false
-  speaker: space_marines_chaplain_dow
-
-- type: voice
-  id: Space_marines_dow
-  name: tts-voice-name-space_marines_dow
-  sex: Male
-  silicon: false
-  speaker: space_marines_dow
-
-- type: voice
-  id: Space_marines_force_commander_dow
-  name: tts-voice-name-space_marines_force_commander_dow
-  sex: Male
-  silicon: false
-  speaker: space_marines_force_commander_dow
-
-- type: voice
-  id: Space_marines_librarian_dow
-  name: tts-voice-name-space_marines_librarian_dow
-  sex: Male
-  silicon: false
-  speaker: space_marines_librarian_dow
-
-- type: voice
-  id: Tau_ethereal_dow
-  name: tts-voice-name-tau_ethereal_dow
-  sex: Male
-  silicon: false
-  speaker: tau_ethereal_dow
-
-- type: voice
-  id: Tau_kroot_dow
-  name: tts-voice-name-tau_kroot_dow
-  sex: Male
-  silicon: false
-  speaker: tau_kroot_dow
-
-- type: voice
-  id: Tutorial_f_dow
-  name: tts-voice-name-tutorial_f_dow
-  sex: Female
-  silicon: false
-  speaker: tutorial_f_dow
-
-- type: voice
-  id: Tutorial_m_dow
-  name: tts-voice-name-tutorial_m_dow
-  sex: Male
-  silicon: false
-  speaker: tutorial_m_dow
-
-- type: voice
-  id: Kingpin
-  name: tts-voice-name-kingpin
-  sex: Male
-  silicon: false
-  speaker: kingpin
+- name: Abaddon
+  description: Голос персонажа Abaddon из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: abaddon_dota_2
+
+- name: Achemist
+  description: Голос персонажа Achemist из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: alchemist_dota_2
+
+- name: Anti-Mage
+  description: Голос персонажа Anti-Mage из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: anti-mage_dota_2
+
+- name: Arc Warden
+  description: Голос персонажа Arc Warden из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: arc_warden_dota_2
+
+- name: Batrider
+  description: Голос персонажа Batrider из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: batrider_dota_2
+
+- name: Bloodseeker
+  description: Голос персонажа Bloodseeker из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: bloodseeker_dota_2
+
+- name: Bounty Hunter
+  description: Голос персонажа Bounty Hunter из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: bounty_hunter_dota_2
+
+- name: Bristleback
+  description: Голос персонажа Bristleback из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: bristleback_dota_2
+
+- name: Broodmother
+  description: Голос персонажа Broodmother из игры Dota 2
+  source: Dota 2
+  gender: female
+  speakers: broodmother_dota_2
+
+- name: Centaur Warrunner
+  description: Голос персонажа Centaur Warrunner из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: centaur_warrunner_dota_2
+
+- name: Clinkz
+  description: Голос персонажа Clinkz из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: clinkz_dota_2
+
+- name: Clockwerk
+  description: Голос персонажа Clockwerk из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: clockwerk_dota_2
+
+- name: Crystal Maiden
+  description: Голос персонажа Crystal Maiden из игры Dota 2
+  source: Dota 2
+  gender: female
+  speakers: crystal_maiden_dota_2
+
+- name: Dazzle
+  description: Голос персонажа Dazzle из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: dazzle_dota_2
+
+- name: Disruptor
+  description: Голос персонажа Disruptor из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: disruptor_dota_2
+
+- name: Doom
+  description: Голос персонажа Doom из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: doom_dota_2
+
+- name: Dragon Knight
+  description: Голос персонажа Dragon Knight из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: dragon_knight_dota_2
+
+- name: Dragon Knight Dragon
+  description: Голос персонажа Dragon Knight Dragon из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: dragon_knight_dragon_dota_2
+
+- name: Drow Ranger
+  description: Голос персонажа Drow Ranger из игры Dota 2
+  source: Dota 2
+  gender: female
+  speakers: drow_ranger_dota_2
+
+- name: Earthshaker
+  description: Голос персонажа Earthshaker из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: earthshaker_dota_2
+
+- name: Ember Spirit
+  description: Голос персонажа Ember Spirit из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: ember_spirit_dota_2
+
+- name: Enigma
+  description: Голос персонажа Enigma из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: enigma_dota_2
+
+- name: G-Man
+  description: Голос персонажа G-Man из игры Half-Life 2
+  source: Half-Life 2
+  gender: male
+  speakers: gman
+
+- name: GLaDOS
+  description: Голос персонажа GLaDOS из игры Portal 2
+  source: Portal 2
+  gender: female
+  speakers: glados
+
+- name: Gyrocopter
+  description: Голос персонажа Gyrocopter из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: gyrocopter_dota_2
+
+- name: Huskar
+  description: Голос персонажа Huskar из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: huskar_dota_2
+
+- name: Invoker
+  description: Голос персонажа Invoker из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: invoker_dota_2
+
+- name: Juggernaut
+  description: Голос персонажа Juggernaut из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: juggernaut_dota_2
+
+- name: Keeper Of The Light
+  description: Голос персонажа Keeper Of The Light из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: keeper_of_the_light_dota_2
+
+- name: Kunkka
+  description: Голос персонажа Kunkka из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: kunkka_dota_2
+
+- name: Legion Commander
+  description: Голос персонажа Legion Commander из игры Dota 2
+  source: Dota 2
+  gender: female
+  speakers: legion_commander_dota_2
+
+- name: Legion Commander Demon
+  description: Голос персонажа Legion Commander Demon из игры Dota 2
+  source: Dota 2
+  gender: female
+  speakers: legion_commander_demon_dota_2
+
+- name: Lich
+  description: Голос персонажа Lich из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: lich_dota_2
+
+- name: Lina
+  description: Голос персонажа Lina из игры Dota 2
+  source: Dota 2
+  gender: female
+  speakers: lina_dota_2
+
+- name: Luna
+  description: Голос персонажа Luna из игры Dota 2
+  source: Dota 2
+  gender: female
+  speakers: luna_dota_2
+
+- name: Lycan
+  description: Голос персонажа Lycan из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: lycan_dota_2
+
+- name: Lycan Wolf
+  description: Голос персонажа Lycan Wolf из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: lycan_wolf_dota_2
+
+- name: Meepo
+  description: Голос персонажа Meepo из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: meepo_dota_2
+
+- name: Mirana
+  description: Голос персонажа Mirana из игры Dota 2
+  source: Dota 2
+  gender: female
+  speakers: mirana_dota_2
+
+- name: Monkey King
+  description: Голос персонажа Monkey King из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: monkey_king_dota_2
+
+- name: Monkey King Crown
+  description: Голос персонажа Monkey King Crown из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: monkey_king_crown_dota_2
+
+- name: Necrophos
+  description: Голос персонажа Necrophos из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: necrophos_dota_2
+
+- name: Nyx Assassin
+  description: Голос персонажа Nyx Assassin из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: nyx_assassin_dota_2
+
+- name: Omniknight
+  description: Голос персонажа Omniknight из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: omniknight_dota_2
+
+- name: Outworld Destroyer
+  description: Голос персонажа Outworld Destroyer из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: outworld_destroyer_dota_2
+
+- name: Phantom Assassin
+  description: Голос персонажа Phantom Assassin из игры Dota 2
+  source: Dota 2
+  gender: female
+  speakers: phantom_assassin_dota_2
+
+- name: Phantom Assassin Arcana
+  description: Голос персонажа Phantom Assassin Arcana из игры Dota 2
+  source: Dota 2
+  gender: female
+  speakers: phantom_assassin_arcana_dota_2
+
+- name: Phantom Lancer
+  description: Голос персонажа Phantom Lancer из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: phantom_lancer_dota_2
+
+- name: PlayBoyzTV
+  description: Голос канала PlayBoyzTV
+  source: Media
+  gender: male
+  speakers: playboyztv
+
+- name: Pudge
+  description: Голос персонажа Pudge из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: pudge_dota_2
+
+- name: Queen Of Pain
+  description: Голос персонажа Queen Of Pain из игры Dota 2
+  source: Dota 2
+  gender: female
+  speakers: queen_of_pain_dota_2
+
+- name: Razor
+  description: Голос персонажа Razor из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: razor_dota_2
+
+- name: Riki
+  description: Голос персонажа Riki из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: riki_dota_2
+
+- name: Rubick
+  description: Голос персонажа Rubick из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: rubick_dota_2
+
+- name: Sand King
+  description: Голос персонажа Sand King из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: sand_king_dota_2
+
+- name: SentryBot
+  description: Голос персонажа SentryBot из Fallout 3
+  source: Fallout 3
+  gender: male
+  speakers: sentrybot
+
+- name: Shadow Fiend
+  description: Голос персонажа Shadow Fiend из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: shadow_fiend_dota_2
+
+- name: Shadow Shaman
+  description: Голос персонажа Shadow Shaman из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: shadow_shaman_dota_2
+
+- name: Skywrath Mage
+  description: Голос персонажа Skywrath Mage из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: skywrath_mage_dota_2
+
+- name: Slardar
+  description: Голос персонажа Slardar из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: slardar_dota_2
+
+- name: Slark
+  description: Голос персонажа Slark из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: slark_dota_2
+
+- name: Spirit Breaker
+  description: Голос персонажа Spirit Breaker из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: spirit_breaker_dota_2
+
+- name: Storm Spirit
+  description: Голос персонажа Storm Spirit из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: storm_spirit_dota_2
+
+- name: Sven
+  description: Голос персонажа Sven из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: sven_dota_2
+
+- name: Templar Assassin
+  description: Голос персонажа Templar Assassin из игры Dota 2
+  source: Dota 2
+  gender: female
+  speakers: templar_assassin_dota_2
+
+- name: Tidehunter
+  description: Голос персонажа Tidehunter из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: tidehunter_dota_2
+
+- name: Treant Protector
+  description: Голос персонажа Treant Protector из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: treant_protector_dota_2
+
+- name: Underlord
+  description: Голос персонажа Underlord из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: underlord_dota_2
+
+- name: Ursa
+  description: Голос персонажа Ursa из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: ursa_dota_2
+
+- name: Windranger
+  description: Голос персонажа Windranger из игры Dota 2
+  source: Dota 2
+  gender: female
+  speakers: windranger_dota_2
+
+- name: Winter Wyvern
+  description: Голос персонажа Winter Wyvern из игры Dota 2
+  source: Dota 2
+  gender: female
+  speakers: winter_wyvern_dota_2
+
+- name: Witch Doctor
+  description: Голос персонажа Witch Doctor из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: witch_doctor_dota_2
+
+- name: Wraith King
+  description: Голос персонажа Wraith King из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: wraith_king_dota_2
+
+- name: Zeus
+  description: Голос персонажа Zeus из игры Dota 2
+  source: Dota 2
+  gender: male
+  speakers: zeus_dota_2
+
+- name: Абрахам Ронен
+  description: Голос персонажа Абрахам Ронен из игры Hogwarts Legacy
+  source: Hogwarts Legacy
+  gender: male
+  speakers: abraham_ronen
+
+- name: Адъютант
+  description: Голос персонажа Адъютант из игры StarCraft 2
+  source: StarCraft 2
+  gender: female
+  speakers: adjutant
+
+- name: Азир
+  description: Голос персонажа Азир из игры League of Legends
+  source: League of Legends
+  gender: male
+  speakers: azir
+
+- name: Аликс Вэнс
+  description: Голос персонажа Аликс Вэнс из игры Half-Life 2
+  source: Half-Life 2
+  gender: female
+  speakers: alyx
+
+- name: Амина
+  description: Голос виртуального ютубера St. Amina Renewal
+  source: Media
+  gender: female
+  speakers: amina
+
+- name: Амит Таккар
+  description: Голос персонажа Амит Таккар из игры Hogwarts Legacy
+  source: Hogwarts Legacy
+  gender: male
+  speakers: amitkakkar
+
+- name: Андуин Ринн
+  description: Голос персонажа Андуин Ринн из игры Hearthstone
+  source: Hearthstone
+  gender: male
+  speakers: anduin
+
+- name: Ариэль Хэнсон
+  description: Голос персонажа Ариэль Хэнсон из игры StarCraft 2
+  source: StarCraft 2
+  gender: female
+  speakers: hanson
+
+- name: Артас Менетил
+  description: Голос персонажа Артас Менетил из игры Warcraft 3
+  source: Warcraft 3
+  gender: male
+  speakers: arthas
+
+- name: Архон Тёмных Эльдар
+  description: 'Голос юнита Архон Тёмных Эльдар из игры Warhammer 40,000: Dawn of
+    War'
+  source: 'Warhammer 40,000: Dawn of War'
+  gender: male
+  speakers: dark_eldar_archon_dow
+
+- name: Ассасин Имперской Гвардии
+  description: 'Голос юнита Ассасин Имперской Гвардии из игры Warhammer 40,000: Dawn
+    of War'
+  source: 'Warhammer 40,000: Dawn of War'
+  gender: male
+  speakers: guard_assassin_dow
+
+- name: Астрид
+  description: Голос персонажа Астрид из игры TES 5 Skyrim
+  source: TES 5 Skyrim
+  gender: female
+  speakers: astrid
+
+- name: Бандит
+  description: Голос персонажа Бандита из игры S.T.A.L.K.E.R.
+  source: S.T.A.L.K.E.R.
+  gender: male
+  speakers: bandit
+
+- name: Барак Обама
+  description: Голос американского президента Барака Обамы
+  source: Media
+  gender: male
+  speakers: obama
+
+- name: Барни Калхун
+  description: Голос персонажа Барни Калхун из игры Half-Life 2
+  source: Half-Life 2
+  gender: male
+  speakers: barni
+
+- name: Библиарий Космодесантников
+  description: 'Голос юнита Библиарий Космодесантников из игры Warhammer 40,000: Dawn
+    of War'
+  source: 'Warhammer 40,000: Dawn of War'
+  gender: male
+  speakers: space_marines_librarian_dow
+
+- name: Бойзы Орков
+  description: 'Голос юнита Бойзы Орков из игры Warhammer 40,000: Dawn of War'
+  source: 'Warhammer 40,000: Dawn of War'
+  gender: male
+  speakers: orks_dow
+
+- name: Борис Петров
+  description: Голос персонажа Борис Петров из игры Tiny Bunny
+  source: Tiny Bunny
+  gender: male
+  speakers: boris_petrov_father_tb
+
+- name: Бралик
+  description: Голос персонажа Бралик из игры StarCraft 2
+  source: StarCraft 2
+  gender: male
+  speakers: bralik
+
+- name: Брендан
+  description: Голос персонажа Брендан из игры Cyberpunk 2077
+  source: Cyberpunk 2077
+  gender: male
+  speakers: brendan
+
+- name: Бру'кан
+  description: Голос персонажа Бру'кан из игры Hearthstone
+  source: Hearthstone
+  gender: male
+  speakers: brukan
+
+- name: Бутч Харрис
+  description: Голос персонажа Бутч Харрис из игры Fallout 2
+  source: Fallout 2
+  gender: male
+  speakers: butch
+
+- name: Бэбэй
+  description: Голос популярного стримера Бэбэя
+  source: Media
+  gender: male
+  speakers: bebey
+
+- name: Варбосс Орков
+  description: 'Голос юнита Варбосс Орков из игры Warhammer 40,000: Dawn of War'
+  source: 'Warhammer 40,000: Dawn of War'
+  gender: male
+  speakers: orks_warboss_dow
+
+- name: Ведьма Тёмных Эльдар
+  description: 'Голос юнита Ведьма Тёмных Эльдар из игры Warhammer 40,000: Dawn of
+    War'
+  source: 'Warhammer 40,000: Dawn of War'
+  gender: female
+  speakers: dark_eldar_wych_dow
+
+- name: Весемир
+  description: Голос персонажа Весемир из игры The Witcher 3
+  source: The Witcher 3
+  gender: male
+  speakers: vesemir
+
+- name: Ви
+  description: Голос персонажа Ви из игры Cyberpunk 2077
+  source: Cyberpunk 2077
+  gender: female
+  speakers: v_female
+
+- name: Виктор Руквуд
+  description: Голос персонажа Виктор Руквуд из игры Hogwarts Legacy
+  source: Hogwarts Legacy
+  gender: male
+  speakers: victorrookwood
+
+- name: Воин Тёмных Эльдар
+  description: 'Голос юнита Воин Тёмных Эльдар из игры Warhammer 40,000: Dawn of War'
+  source: 'Warhammer 40,000: Dawn of War'
+  gender: male
+  speakers: dark_eldar_warrior_dow
+
+- name: Вол'джин
+  description: Голос персонажа Вол'джин из игры Warcraft 3
+  source: Warcraft 3
+  gender: male
+  speakers: voljin
+
+- name: Ворожея
+  description: Голос Ворожей из игры TES 5 Skyrim
+  source: TES 5 Skyrim
+  gender: male
+  speakers: hagraven
+
+- name: Габриэль Тош
+  description: Голос персонажа Габриэль Тош из игры StarCraft 2
+  source: StarCraft 2
+  gender: male
+  speakers: tosh
+
+- name: Гаррош Адский Крик
+  description: Голос персонажа Гаррош Адский Крик из игры Hearthstone
+  source: Hearthstone
+  gender: male
+  speakers: garrosh
+
+- name: Геральт из Ривии
+  description: Голос персонажа Геральт из Ривии из игры The Witcher 3
+  source: The Witcher 3
+  gender: male
+  speakers: geralt
+
+- name: Гильом де Лонфаль
+  description: Голос персонажа Гильом де Лонфаль из игры The Witcher 3
+  source: The Witcher 3
+  gender: male
+  speakers: guillaume_de_launfal
+
+- name: Глэдвин Мун
+  description: Голос персонажа Глэдвин Мун из игры Hogwarts Legacy
+  source: Hogwarts Legacy
+  gender: male
+  speakers: gladwinmoon
+
+- name: Гоблин Б
+  description: Голос персонажа Гоблин Б из игры Hogwarts Legacy
+  source: Hogwarts Legacy
+  gender: male
+  speakers: generic_goblin_b
+
+- name: Гоблин В
+  description: Голос персонажа Гоблин В из игры Hogwarts Legacy
+  source: Hogwarts Legacy
+  gender: male
+  speakers: generic_goblin_c
+
+- name: Гретчины Орков
+  description: 'Голос юнита Гретчины Орков из игры Warhammer 40,000: Dawn of War'
+  source: 'Warhammer 40,000: Dawn of War'
+  gender: male
+  speakers: orks_grots_dow
+
+- name: Джайна Праудмур
+  description: Голос персонажа Джайна Праудмур из игры Hearthstone
+  source: Hearthstone
+  gender: female
+  speakers: jaina
+
+- name: Джеки Уэллс
+  description: Голос персонажа Джеки Уэллс из игры Cyberpunk 2077
+  source: Cyberpunk 2077
+  gender: male
+  speakers: jackie
+
+- name: Джерико
+  description: Голос персонажа Джерико из Fallout 3
+  source: Fallout 3
+  gender: male
+  speakers: jericho_fl3
+
+- name: Джо Байден
+  description: Голос американского президента Джо Байдена
+  source: Media
+  gender: male
+  speakers: biden
+
+- name: Джон Генри Эдем
+  description: Голос персонажа Джон Генри Эдем из Fallout 3
+  source: Fallout 3
+  gender: male
+  speakers: john_henry_eden_fl3
+
+- name: Джонни Сильверхенд
+  description: Голос персонажа Джонни Сильверхенд из игры Cyberpunk 2077
+  source: Cyberpunk 2077
+  gender: male
+  speakers: johnny
+
+- name: Джуди Альварес
+  description: Голос персонажа Джуди Альварес из игры Cyberpunk 2077
+  source: Cyberpunk 2077
+  gender: female
+  speakers: judy
+
+- name: Джудит Моссман
+  description: Голос персонажа Джудит Моссман из игры Half-Life 2
+  source: Half-Life 2
+  gender: female
+  speakers: mossman
+
+- name: Дик Ричардсон
+  description: Голос персонажа Ричард «Дик» Ричардсон из игры Fallout 2
+  source: Fallout 2
+  gender: male
+  speakers: richardson
+
+- name: Дина Гекат
+  description: Голос персонажа Дина Гекат из игры Hogwarts Legacy
+  source: Hogwarts Legacy
+  gender: female
+  speakers: dinah_hecat
+
+- name: Дмитрий Пучков
+  description: ''
+  source: Media
+  gender: male
+  speakers: puchkow
+
+- name: Добакин
+  description: Голос начинающего диктора Добакина
+  source: Media
+  gender: male
+  speakers: dbkn2
+
+- name: Добрая Мита
+  description: Голос персонажа Добрая Мита из игры MiSide
+  source: MiSide
+  gender: female
+  speakers: mitakind
+
+- name: Добрая Талия
+  description: Голос персонажа Добрая Талия из игры Dungeons 3
+  source: Dungeons 3
+  gender: female
+  speakers: good_thalya
+
+- name: Доктор Кляйнер
+  description: Голос персонажа Доктор Кляйнер из игры Half-Life 2
+  source: Half-Life 2
+  gender: male
+  speakers: kleiner
+
+- name: Домовой эльф из святилища
+  description: Голос персонажа Домовой эльф из святилища из игры Hogwarts Legacy
+  source: Hogwarts Legacy
+  gender: male
+  speakers: sanctuary_house_elf
+
+- name: Дональд Трамп
+  description: Голос американского президента Дональда Трампа
+  source: Media
+  gender: male
+  speakers: trump
+
+- name: Женщина командир
+  description: Голос женских персонажей командиров из игры TES 5 Skyrim
+  source: TES 5 Skyrim
+  gender: female
+  speakers: female_commander
+
+- name: Житель
+  description: Голос персонажа Житель из игры Minecraft
+  source: Minecraft
+  gender: male
+  speakers: villager
+
+- name: Зенобия Ноук
+  description: Голос персонажа Зенобия Ноук из игры Hogwarts Legacy
+  source: Hogwarts Legacy
+  gender: female
+  speakers: zenobianoke
+
+- name: Зиггс
+  description: Голос персонажа Зиггс из игры League of Legends
+  source: League of Legends
+  gender: male
+  speakers: ziggs
+
+- name: Злая Неко-Арк
+  description: Злой голос персонажа Неко-Арк из Fate
+  source: Fate
+  gender: female
+  speakers: angry_neco_arc
+
+- name: Злая Талия
+  description: Голос персонажа Злая Талия из игры Dungeons 3
+  source: Dungeons 3
+  gender: female
+  speakers: evil_thalya
+
+- name: Золтан Хивай
+  description: Голос персонажа Золтан Хивай из игры The Witcher 3
+  source: The Witcher 3
+  gender: male
+  speakers: zoltan_chivay
+
+- name: Игнатия Уайлдсмит
+  description: Голос персонажа Игнатия Уайлдсмит из игры Hogwarts Legacy
+  source: Hogwarts Legacy
+  gender: female
+  speakers: ignatiaflootravel
+
+- name: Илай Вэнс
+  description: Голос персонажа Илай Вэнс из игры Half-Life 2
+  source: Half-Life 2
+  gender: male
+  speakers: vance
+
+- name: Иллидан Ярость Бури
+  description: Голос персонажа Иллидан Ярость Бури из игры Warcraft 3
+  source: Warcraft 3
+  gender: male
+  speakers: illidan
+
+- name: Инженер
+  description: Голос персонажа Инженер из игры Team Fortress 2
+  source: Team Fortress 2
+  gender: male
+  speakers: engineer
+
+- name: Инструктор DOW
+  description: 'Мужской голос из туториала игры Warhammer 40,000: Dawn of War'
+  source: 'Warhammer 40,000: Dawn of War'
+  gender: male
+  speakers: tutorial_m_dow
+
+- name: Инструкторша DOW
+  description: 'Женский голос инструктора из туториала игры Warhammer 40,000: Dawn
+    of War'
+  source: 'Warhammer 40,000: Dawn of War'
+  gender: female
+  speakers: tutorial_f_dow
+
+- name: Каджит
+  description: Голос персонажа Каджит из игры TES 5 Skyrim
+  source: TES 5 Skyrim
+  gender: male
+  speakers: khajiit
+
+- name: Капеллан Космодесантников
+  description: 'Голос юнита Капеллан Космодесантников из игры Warhammer 40,000: Dawn
+    of War'
+  source: 'Warhammer 40,000: Dawn of War'
+  gender: male
+  speakers: space_marines_chaplain_dow
+
+- name: Капитан Имперской Гвардии
+  description: 'Голос юнита Капитан Имперской Гвардии из игры Warhammer 40,000: Dawn
+    of War'
+  source: 'Warhammer 40,000: Dawn of War'
+  gender: male
+  speakers: guard_captain_dow
+
+- name: Каратель
+  description: Голос персонажа Каратель из игры The Punisher
+  source: The Punisher
+  gender: male
+  speakers: punisher
+
+- name: Карина Петрова
+  description: Голос персонажа Карина Петрова из игры Tiny Bunny
+  source: Tiny Bunny
+  gender: female
+  speakers: karina_petrova_tb
+
+- name: Касркин Имперской Гвардии
+  description: 'Голос юнита Касркин Имперской Гвардии из игры Warhammer 40,000: Dawn
+    of War'
+  source: 'Warhammer 40,000: Dawn of War'
+  gender: male
+  speakers: guard_karskin_dow
+
+- name: Катя Смирнова
+  description: Голос персонажа Катя Смирнова из игры Tiny Bunny
+  source: Tiny Bunny
+  gender: female
+  speakers: kate_smirnova_tb
+
+- name: Керис ан Крайт
+  description: Голос персонажа Керис ан Крайт из игры The Witcher 3
+  source: The Witcher 3
+  gender: female
+  speakers: cerys
+
+- name: Кингпин
+  description: 'Голос Кингпина из игры Kingpin: Life of Crime'
+  source: 'Kingpin: Life of Crime'
+  gender: male
+  speakers: kingpin
+
+- name: Ковир Ноблеман
+  description: Голос персонажа Ковир Ноблеман из игры The Witcher 3
+  source: The Witcher 3
+  gender: male
+  speakers: kovir_nobleman
+
+- name: Кодлак Белая Грива
+  description: Голос персонажа Кодлак Белая Грива из игры TES 5 Skyrim
+  source: TES 5 Skyrim
+  gender: male
+  speakers: kodlakwhitemane
+
+- name: Колдун Хаоса
+  description: 'Голос юнита Колдун Хаоса из игры Warhammer 40,000: Dawn of War'
+  source: 'Warhammer 40,000: Dawn of War'
+  gender: male
+  speakers: chaos_marines_sorceror_dow
+
+- name: Колдун Эльдар
+  description: 'Голос юнита Колдун Эльдар из игры Warhammer 40,000: Dawn of War'
+  source: 'Warhammer 40,000: Dawn of War'
+  gender: female
+  speakers: eldar_warlock_dow
+
+- name: Колин Мориарти
+  description: Голос персонажа Колин Мориарти из Fallout 3
+  source: Fallout 3
+  gender: male
+  speakers: colin_moriarty_fl3
+
+- name: Команда тяжёлого оружия Имперской Гвардии
+  description: 'Голос юнита Команда тяжёлого оружия Имперской Гвардии из игры Warhammer
+    40,000: Dawn of War'
+  source: 'Warhammer 40,000: Dawn of War'
+  gender: male
+  speakers: guard_heavy_weapons_platoon_dow
+
+- name: Командир Сил Космодесантников
+  description: 'Голос юнита Командир Сил Космодесантников из игры Warhammer 40,000:
+    Dawn of War'
+  source: 'Warhammer 40,000: Dawn of War'
+  gender: male
+  speakers: space_marines_force_commander_dow
+
+- name: Комиссар Имперской Гвардии
+  description: 'Голос юнита Комиссар Имперской Гвардии из игры Warhammer 40,000: Dawn
+    of War'
+  source: 'Warhammer 40,000: Dawn of War'
+  gender: male
+  speakers: guard_commissar_dow
+
+- name: Коротковолосая Мита
+  description: Голос персонажа Коротковолосая Мита из игры MiSide
+  source: MiSide
+  gender: female
+  speakers: mitashorthairs
+
+- name: Космодесантники
+  description: 'Голос юнита Космодесантники из игры Warhammer 40,000: Dawn of War'
+  source: 'Warhammer 40,000: Dawn of War'
+  gender: male
+  speakers: space_marines_dow
+
+- name: Космодесантники 2
+  description: 'Голос юнита Космодесантники 2 из игры Warhammer 40,000: Dawn of War'
+  source: 'Warhammer 40,000: Dawn of War'
+  gender: male
+  speakers: space_marines_2_dow
+
+- name: Космодесантники Хаоса
+  description: 'Голос юнита Космодесантники Хаоса из игры Warhammer 40,000: Dawn of
+    War'
+  source: 'Warhammer 40,000: Dawn of War'
+  gender: male
+  speakers: chaos_marines_dow
+
+- name: Крууты Тау
+  description: 'Голос юнита Крууты Тау из игры Warhammer 40,000: Dawn of War'
+  source: 'Warhammer 40,000: Dawn of War'
+  gender: male
+  speakers: tau_kroot_dow
+
+- name: Культисты Хаоса
+  description: 'Голос юнита Культисты Хаоса из игры Warhammer 40,000: Dawn of War'
+  source: 'Warhammer 40,000: Dawn of War'
+  gender: male
+  speakers: chaos_marines_cultists_dow
+
+- name: Кэйтлин
+  description: Голос персонажа Кэйтлин из игры League of Legends
+  source: League of Legends
+  gender: female
+  speakers: caitlyn
+
+- name: Ламберт
+  description: Голос персонажа Ламберт из игры The Witcher 3
+  source: The Witcher 3
+  gender: male
+  speakers: lambert
+
+- name: Лейтенант Тихонов
+  description: Голос персонажа Лейтенант Тихонов из игры Tiny Bunny
+  source: Tiny Bunny
+  gender: male
+  speakers: tihonov_tb
+
+- name: Лесник
+  description: Голос персонажа Лесник из игры S.T.A.L.K.E.R.
+  source: S.T.A.L.K.E.R.
+  gender: male
+  speakers: forester
+
+- name: Лодгок
+  description: Голос персонажа Лодгок из игры Hogwarts Legacy
+  source: Hogwarts Legacy
+  gender: male
+  speakers: lodgok
+
+- name: Лорд Хаоса
+  description: 'Голос юнита Лорд Хаоса из игры Warhammer 40,000: Dawn of War'
+  source: 'Warhammer 40,000: Dawn of War'
+  gender: male
+  speakers: chaos_marines_lord_dow
+
+- name: Лорд Харкон
+  description: Голос персонажа Лорд Харкон из игры TES 5 Skyrim
+  source: TES 5 Skyrim
+  gender: male
+  speakers: lord_harkon
+
+- name: Лютик
+  description: Голос персонажа Лютик из игры The Witcher 3
+  source: The Witcher 3
+  gender: male
+  speakers: dandelion
+
+- name: Мавен Чёрный Вереск
+  description: Голос персонажа Мавен Чёрный Вереск из игры TES 5 Skyrim
+  source: TES 5 Skyrim
+  gender: female
+  speakers: maven
+
+- name: Майко Маэда
+  description: Голос персонажа Майко Маэда из игры Cyberpunk 2077
+  source: Cyberpunk 2077
+  gender: female
+  speakers: maiko
+
+- name: Майрон
+  description: Голос персонажа Майрон из игры Fallout 2
+  source: Fallout 2
+  gender: male
+  speakers: myron
+
+- name: Мана
+  description: Голос виртуального ютубера Mana Renewal
+  source: Media
+  gender: female
+  speakers: mana
+
+- name: Мандрагор Тёмных Эльдар
+  description: 'Голос юнита Мандрагор Тёмных Эльдар из игры Warhammer 40,000: Dawn
+    of War'
+  source: 'Warhammer 40,000: Dawn of War'
+  gender: male
+  speakers: dark_eldar_mandrake_dow
+
+- name: Маркус
+  description: Голос персонажа Маркус из игры Fallout 2
+  source: Fallout 2
+  gender: male
+  speakers: marcus
+
+- name: Матильда Уизли
+  description: Голос персонажа Матильда Уизли из игры Hogwarts Legacy
+  source: Hogwarts Legacy
+  gender: female
+  speakers: matildaweasley
+
+- name: Медик
+  description: Голос персонажа Медик из игры Team Fortress 2
+  source: Team Fortress 2
+  gender: male
+  speakers: medic
+
+- name: Миссионер Сестёр Битвы
+  description: 'Голос юнита Миссионер Сестёр Битвы из игры Warhammer 40,000: Dawn
+    of War'
+  source: 'Warhammer 40,000: Dawn of War'
+  gender: male
+  speakers: sisters_missionary_dow
+
+- name: Мистер Помощник
+  description: Голос персонажа Мистер Помощник из Fallout 3
+  source: Fallout 3
+  gender: male
+  speakers: mister_handy_fl3
+
+- name: Мистер Храбрец
+  description: Голос персонажа Мистер Храбрец из Fallout 3
+  source: Fallout 3
+  gender: male
+  speakers: mister_gutsy_fl3
+
+- name: Мита
+  description: Голос персонажа Мита из игры MiSide
+  source: MiSide
+  gender: female
+  speakers: mita
+
+- name: Мита Призрак
+  description: Голос персонажа Мита Призрак из игры MiSide
+  source: MiSide
+  gender: female
+  speakers: mitaghost
+
+- name: Митч Андерсон
+  description: Голос персонажа Митч Андерсон из игры Cyberpunk 2077
+  source: Cyberpunk 2077
+  gender: male
+  speakers: mitch
+
+- name: Модуль Космоса
+  description: Голос персонажа Модуль Космоса из игры Portal 2
+  source: Portal 2
+  gender: male
+  speakers: space_core
+
+- name: Модуль Приключений
+  description: Голос персонажа Модуль Приключений из игры Portal 2
+  source: Portal 2
+  gender: male
+  speakers: adventure_core
+
+- name: Модуль Фактов
+  description: Голос персонажа Модуль Фактов из игры Portal 2
+  source: Portal 2
+  gender: male
+  speakers: fact_core
+
+- name: Мойра Браун
+  description: Голос персонажа Мойра Браун из Fallout 3
+  source: Fallout 3
+  gender: female
+  speakers: moira_brown
+
+- name: Мориарти
+  description: ''
+  source: Media
+  gender: male
+  speakers: moriarti
+
+- name: Мэтт Хорнер
+  description: Голос персонажа Мэтт Хорнер из игры StarCraft 2
+  source: StarCraft 2
+  gender: male
+  speakers: horner
+
+- name: Назир
+  description: Голос персонажа Назир из игры TES 5 Skyrim
+  source: TES 5 Skyrim
+  gender: male
+  speakers: nazir
+
+- name: Натсай Онай
+  description: Голос персонажа Натсай Онай из игры Hogwarts Legacy
+  source: Hogwarts Legacy
+  gender: female
+  speakers: natsaionai
+
+- name: Неко-Арк
+  description: Голос персонажа Неко-Арк из Fate
+  source: Fate
+  gender: female
+  speakers: neco
+
+- name: Неко-Арк 2
+  description: Голос персонажа Неко-Арк из Fate
+  source: Fate
+  gender: female
+  speakers: neco_arc_2
+
+- name: Норд
+  description: Голос Нордов из игры TES 5 Skyrim
+  source: TES 5 Skyrim
+  gender: male
+  speakers: nord
+
+- name: Нэнси Хартли
+  description: Голос персонажа Нэнси Хартли из игры Cyberpunk 2077
+  source: Cyberpunk 2077
+  gender: female
+  speakers: nancy_hartley
+
+- name: Огненный Дракон Эльдар
+  description: 'Голос юнита Огненный Дракон Эльдар из игры Warhammer 40,000: Dawn
+    of War'
+  source: 'Warhammer 40,000: Dawn of War'
+  gender: female
+  speakers: eldar_fire_dragon_dow
+
+- name: Огрин Имперской Гвардии
+  description: 'Голос юнита Огрин Имперской Гвардии из игры Warhammer 40,000: Dawn
+    of War'
+  source: 'Warhammer 40,000: Dawn of War'
+  gender: male
+  speakers: guard_ogryn_dow
+
+- name: Оминис Мракс
+  description: Голос персонажа Оминис Мракс из игры Hogwarts Legacy
+  source: Hogwarts Legacy
+  gender: male
+  speakers: ominisgaunt
+
+- name: Освальд Форрест
+  description: Голос персонажа Освальд Форрест из игры Cyberpunk 2077
+  source: Cyberpunk 2077
+  gender: male
+  speakers: oswald_forrest
+
+- name: Отец Григорий
+  description: Голос персонажа Отец Григорий из игры Half-Life 2
+  source: Half-Life 2
+  gender: male
+  speakers: father_grigori
+
+- name: Офицер Анклава
+  description: Голос персонажа Офицер Анклава из игры Fallout 2
+  source: Fallout 2
+  gender: male
+  speakers: officer_enclave
+
+- name: Панам Палмер
+  description: Голос персонажа Панам Палмер из игры Cyberpunk 2077
+  source: Cyberpunk 2077
+  gender: female
+  speakers: panam
+
+- name: Папич
+  description: Голос популярного стримера Папича
+  source: Media
+  gender: male
+  speakers: papich
+
+- name: Планя
+  description: Голос виртуального ютубера Planya Ch
+  source: Media
+  gender: female
+  speakers: planya
+
+- name: Подрывник
+  description: Голос персонажа Подрывник из игры Team Fortress 2
+  source: Team Fortress 2
+  gender: male
+  speakers: demoman
+
+- name: Полина Морозова
+  description: Голос персонажа Полина Морозова из игры Tiny Bunny
+  source: Tiny Bunny
+  gender: female
+  speakers: polina
+
+- name: Поппи Добринг
+  description: Голос персонажа Поппи Добринг из игры Hogwarts Legacy
+  source: Hogwarts Legacy
+  gender: female
+  speakers: poppysweeting
+
+- name: Провидец Эльдар
+  description: 'Голос юнита Провидец Эльдар из игры Warhammer 40,000: Dawn of War'
+  source: 'Warhammer 40,000: Dawn of War'
+  gender: female
+  speakers: eldar_farseer_dow
+
+- name: Псайкер Имперской Гвардии
+  description: 'Голос юнита Псайкер Имперской Гвардии из игры Warhammer 40,000: Dawn
+    of War'
+  source: 'Warhammer 40,000: Dawn of War'
+  gender: male
+  speakers: guard_psyker_dow
+
+- name: Ранрок
+  description: Голос персонажа Ранрок из игры Hogwarts Legacy
+  source: Hogwarts Legacy
+  gender: male
+  speakers: ranrak
+
+- name: Рассказчик
+  description: Голос персонажа Рассказчик из игры Dungeons 3
+  source: Dungeons 3
+  gender: male
+  speakers: narrator_d3
+
+- name: Рексар
+  description: Голос персонажа Рексар из игры Warcraft 3
+  source: Warcraft 3
+  gender: male
+  speakers: rexxar
+
+- name: Робер МакКриди
+  description: Голос персонажа Робер МакКриди из Fallout 3
+  source: Fallout 3
+  gender: male
+  speakers: robert_maccready
+
+- name: Рома Пятифанов
+  description: Голос персонажа Рома Пятифанов из игры Tiny Bunny
+  source: Tiny Bunny
+  gender: male
+  speakers: romka
+
+- name: Саманта Дейл
+  description: Голос персонажа Саманта Дейл из игры Hogwarts Legacy
+  source: Hogwarts Legacy
+  gender: female
+  speakers: samantha_dale
+
+- name: Сара Лайонс
+  description: Голос персонажа Сара Лайонс из Fallout 3
+  source: Fallout 3
+  gender: female
+  speakers: sarah_lyons_fl3
+
+- name: Священник Имперской Гвардии
+  description: 'Голос юнита Священник Имперской Гвардии из игры Warhammer 40,000:
+    Dawn of War'
+  source: 'Warhammer 40,000: Dawn of War'
+  gender: male
+  speakers: guard_priest_dow
+
+- name: Семён Бабурин
+  description: Голос персонажа Семён Бабурин из игры Tiny Bunny
+  source: Tiny Bunny
+  gender: male
+  speakers: semen_baburin_tb
+
+- name: Серана
+  description: Голос персонажа Серана из игры TES 5 Skyrim
+  source: TES 5 Skyrim
+  gender: female
+  speakers: serana
+
+- name: Сержант Дорнан
+  description: Голос персонажа Сержант Дорнан из игры Fallout 2
+  source: Fallout 2
+  gender: male
+  speakers: dornan
+
+- name: Сержант Имперской Гвардии
+  description: 'Голос юнита Сержант Имперской Гвардии из игры Warhammer 40,000: Dawn
+    of War'
+  source: 'Warhammer 40,000: Dawn of War'
+  gender: male
+  speakers: guard_guardsman_sergeant_dow
+
+- name: Сестры Битвы
+  description: 'Голос юнита Сестры Битвы из игры Warhammer 40,000: Dawn of War'
+  source: 'Warhammer 40,000: Dawn of War'
+  gender: female
+  speakers: sisters_battle_sister_dow
+
+- name: Сидорович
+  description: Голос персонажа Сидорович из игры S.T.A.L.K.E.R.
+  source: S.T.A.L.K.E.R.
+  gender: male
+  speakers: sidorovich
+
+- name: Сирона Райан
+  description: Голос персонажа Сирона Райан из игры Hogwarts Legacy
+  source: Hogwarts Legacy
+  gender: female
+  speakers: sirona_ryan
+
+- name: Сквидвард
+  description: Голос персонажа Сквидвард из мультфильма Губка Боб
+  source: Sponge Bob
+  gender: male
+  speakers: squidward
+
+- name: Скиппи
+  description: Голос персонажа Скиппи из игры Cyberpunk 2077
+  source: Cyberpunk 2077
+  gender: male
+  speakers: skippy
+
+- name: Снайпер
+  description: Голос персонажа Снайпер из игры Team Fortress 2
+  source: Team Fortress 2
+  gender: male
+  speakers: sniper
+
+- name: Солдат
+  description: Голос персонажа Солдат из Team Fortress 2 из английской озвучки
+  source: Team Fortress 2
+  gender: male
+  speakers: soldier
+
+- name: Сонная Мита
+  description: Голос персонажа Сонная Мита из игры MiSide
+  source: MiSide
+  gender: female
+  speakers: mitadream
+
+- name: Софрония Франклин
+  description: Голос персонажа Софрония Франклин из игры Hogwarts Legacy
+  source: Hogwarts Legacy
+  gender: female
+  speakers: sophronia_franklin
+
+- name: Старейшина Лайонс
+  description: Голос персонажа Старейшина Лайонс из Fallout 3
+  source: Fallout 3
+  gender: male
+  speakers: elder_lyons_fl3
+
+- name: Стив Санчес
+  description: Голос персонажа Стив Санчес из игры Cyberpunk 2077
+  source: Cyberpunk 2077
+  gender: male
+  speakers: steve
+
+- name: Стражи Эльдар
+  description: 'Голос юнита Стражи Эльдар из игры Warhammer 40,000: Dawn of War'
+  source: 'Warhammer 40,000: Dawn of War'
+  gender: female
+  speakers: eldar_dow
+
+- name: Стражник
+  description: Голос Стражников из игры TES 5 Skyrim
+  source: TES 5 Skyrim
+  gender: male
+  speakers: guard
+
+- name: Стрелок
+  description: Голос персонажа Стрелок из игры S.T.A.L.K.E.R.
+  source: S.T.A.L.K.E.R.
+  gender: male
+  speakers: strelok
+
+- name: Сулик
+  description: Голос персонажа Сулик из игры Fallout 2
+  source: Fallout 2
+  gender: male
+  speakers: sulik
+
+- name: Супер-Мутант
+  description: Голос персонажа Супер-Мутант из Fallout 3
+  source: Fallout 3
+  gender: male
+  speakers: super_mutant_fl3
+
+- name: Тайкус Финдли
+  description: Голос персонажа Тайкус Финдли из игры StarCraft 2
+  source: StarCraft 2
+  gender: male
+  speakers: tychus
+
+- name: Твич
+  description: Голос персонажа Твич из игры League of Legends
+  source: League of Legends
+  gender: male
+  speakers: twitch
+
+- name: Техножрец Имперской Гвардии
+  description: 'Голос юнита Техножрец Имперской Гвардии из игры Warhammer 40,000:
+    Dawn of War'
+  source: 'Warhammer 40,000: Dawn of War'
+  gender: male
+  speakers: guard_enginseer_dow
+
+- name: Тит Мид II
+  description: Голос персонажа Тит Мид II из игры TES 5 Skyrim
+  source: TES 5 Skyrim
+  gender: male
+  speakers: emperor
+
+- name: Тридогнайт
+  description: Голос персонажа Тридогнайт из Fallout 3
+  source: Fallout 3
+  gender: male
+  speakers: threedog
+
+- name: Тридогнайт Радио
+  description: Голос персонажа Тридогнайт версия по радио из Fallout 3
+  source: Fallout 3
+  gender: male
+  speakers: threedog_radio
+
+- name: Трисс
+  description: Голос персонажа Трисс из игры The Witcher 3
+  source: The Witcher 3
+  gender: female
+  speakers: triss
+
+- name: Трэйсер
+  description: Голос персонажа Трэйсер из игры Overwatch
+  source: Overwatch
+  gender: female
+  speakers: tracer
+
+- name: Турель
+  description: Голос персонажа Турель из игры Portal 2
+  source: Portal 2
+  gender: female
+  speakers: turret_floor
+
+- name: Ульфрик Буревестник
+  description: Голос персонажа Ульфрик Буревестник из игры TES 5 Skyrim
+  source: TES 5 Skyrim
+  gender: male
+  speakers: ulfric
+
+- name: Уоллес Брин
+  description: Голос персонажа Уоллес Брин из игры Half-Life 2
+  source: Half-Life 2
+  gender: male
+  speakers: briman
+
+- name: Утер Светоносный
+  description: Голос персонажа Утер Светоносный из игры Hearthstone
+  source: Hearthstone
+  gender: male
+  speakers: uther_hs
+
+- name: Филиппа Эйльхарт
+  description: Голос персонажа Филиппа Эйльхарт из игры The Witcher 3
+  source: The Witcher 3
+  gender: female
+  speakers: philippa_eilhart
+
+- name: Финеас Найджелус Блэк
+  description: Голос персонажа Финеас Найджелус Блэк из игры Hogwarts Legacy
+  source: Hogwarts Legacy
+  gender: male
+  speakers: phineasblack
+
+- name: Флэш Гитз и Нобы Орков
+  description: 'Голос юнитов Флэш Гитз и Нобы Орков из игры Warhammer 40,000: Dawn
+    of War'
+  source: 'Warhammer 40,000: Dawn of War'
+  gender: male
+  speakers: orks_flashgitznobs_dow
+
+- name: Хермеус Мора
+  description: Голос персонажа Хермеус Мора из игры TES 5 Skyrim
+  source: TES 5 Skyrim
+  gender: male
+  speakers: hermaeus_mora
+
+- name: Хреноид
+  description: Голос начинающего диктора Хреноида
+  source: Media
+  gender: male
+  speakers: xrenoid
+
+- name: Хэви
+  description: Голос персонажа Хэви из игры Team Fortress 2
+  source: Team Fortress 2
+  gender: male
+  speakers: heavy
+
+- name: Цирилла
+  description: Голос персонажа Цирилла из игры The Witcher 3
+  source: The Witcher 3
+  gender: female
+  speakers: cirilla
+
+- name: Цицерон
+  description: Голос персонажа Цицерон из игры TES 5 Skyrim
+  source: TES 5 Skyrim
+  gender: male
+  speakers: cicero
+
+- name: Чувак
+  description: Голос персонажа Чувак из игры Postal 2
+  source: Postal 2
+  gender: male
+  speakers: dude
+
+- name: Шани
+  description: Голос персонажа Шани из игры The Witcher 3
+  source: The Witcher 3
+  gender: female
+  speakers: shani
+
+- name: Шарлотта
+  description: Голос виртуального ютубера Charlotte Ch
+  source: Media
+  gender: female
+  speakers: charlotte
+
+- name: Шеогорат
+  description: Голос персонажа Шеогорат из игры TES 5 Skyrim
+  source: TES 5 Skyrim
+  gender: male
+  speakers: sheogorath
+
+- name: Шпион
+  description: Голос персонажа Шпион из игры Team Fortress 2
+  source: Team Fortress 2
+  gender: male
+  speakers: spy
+
+- name: Эвальд Борсоди
+  description: Голос персонажа Эвальд Борсоди из игры The Witcher 3
+  source: The Witcher 3
+  gender: male
+  speakers: ewald_borsodi
+
+- name: Эверетт Клоптон
+  description: Голос персонажа Эверетт Клоптон из игры Hogwarts Legacy
+  source: Hogwarts Legacy
+  gender: male
+  speakers: everett_clopton
+
+- name: Эзоп Шарп
+  description: Голос персонажа Эзоп Шарп из игры Hogwarts Legacy
+  source: Hogwarts Legacy
+  gender: male
+  speakers: aesop_sharp
+
+- name: Экко
+  description: Голос персонажа Экко из игры League of Legends
+  source: League of Legends
+  gender: male
+  speakers: ekko
+
+- name: Элеазар Фиг
+  description: Голос персонажа Элеазар Фиг из игры Hogwarts Legacy
+  source: Hogwarts Legacy
+  gender: male
+  speakers: eleazarfig
+
+- name: Эленвен
+  description: Голос персонажа Эленвен из игры TES 5 Skyrim
+  source: TES 5 Skyrim
+  gender: female
+  speakers: elenwen
+
+- name: Эрни Ларк
+  description: Голос персонажа Эрни Ларк из игры Hogwarts Legacy
+  source: Hogwarts Legacy
+  gender: male
+  speakers: ernielark
+
+- name: Эфирный Тау
+  description: 'Голос юнита Эфирный Тау из игры Warhammer 40,000: Dawn of War'
+  source: 'Warhammer 40,000: Dawn of War'
+  gender: male
+  speakers: tau_ethereal_dow
+
