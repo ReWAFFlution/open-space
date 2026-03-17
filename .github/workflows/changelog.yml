@@ -1,0 +1,64 @@
+name: PR Changelogs
+
+concurrency: commit_action
+
+on:
+  pull_request_target:
+    types: [closed]
+
+env:
+  CHANGELOG_DIR: ${{ github.workspace }}/Resources/Changelog/ChangelogOpenspace.yml
+  PR_NUMBER: ${{ github.event.number }}
+  GITHUB_REPOSITORY: ${{ github.repository }}
+
+jobs:
+  changelog:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true
+    permissions:
+      contents: write
+      pull-requests: read
+
+    steps:
+    - name: Checkout Master Branch
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GH_PAT }}
+        ref: master
+        fetch-depth: 0
+        clean: true
+
+    - name: Setup Git Configuration
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+    - name: Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    - name: Install Python dependencies
+      run: pip install pyyaml requests
+
+    - name: Generate Changelog Entry
+      env:
+        GH_PAT: ${{ secrets.GH_PAT }}
+        CHANGELOG_DIR: ${{ env.CHANGELOG_DIR }}
+        PR_NUMBER: ${{ env.PR_NUMBER }}
+        GITHUB_REPOSITORY: ${{ env.GITHUB_REPOSITORY }}
+      run: python3 Tools/changelog_generator.py
+
+    - name: Commit and Push Changelog
+      env:
+        GH_PAT: ${{ secrets.GH_PAT }}
+      run: |
+        git remote set-url origin "https://x-access-token:${GH_PAT}@github.com/${GITHUB_REPOSITORY}.git"
+        git pull origin master
+        git add "${{ env.CHANGELOG_DIR }}"
+        if ! git diff --cached --quiet; then
+          git commit -m "📝 Update changelog (#${{ env.PR_NUMBER }})"
+          git push origin master
+        else
+          echo "No changes to commit."
+        fi
