@@ -12,6 +12,16 @@ public sealed class HumanoidProfileSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly GrammarSystem _grammar = default!;
 
+    // OpenSpace-TTS Start
+    public const string DefaultVoice = "father_grigori";
+    public static readonly Dictionary<Sex, string> DefaultSexVoice = new()
+        {
+        {Sex.Male, "father_grigori"},
+        {Sex.Female, "alina"},
+        {Sex.Unsexed, "adventure_core"},
+        };
+    // OpenSpace-TTS End
+
     public override void Initialize()
     {
         base.Initialize();
@@ -28,6 +38,7 @@ public sealed class HumanoidProfileSystem : EntitySystem
         ent.Comp.Age = profile.Age;
         ent.Comp.Species = profile.Species;
         ent.Comp.Sex = profile.Sex;
+        ent.Comp.Voice = profile.Voice; // OpenSpace-TTS
         Dirty(ent);
 
         var sexChanged = new SexChangedEvent(ent.Comp.Sex, profile.Sex);

@@ -91,8 +91,10 @@ namespace Content.Shared.Preferences
         [DataField]
         public ProtoId<SpeciesPrototype> Species { get; set; } = DefaultSpecies;
 
+        // OpenSpace-TTS Start
         [DataField]
-        public string Voice { get; set; } = HumanoidCharacterProfile.DefaultVoice;
+        public string Voice { get; set; } = HumanoidProfileSystem.DefaultVoice;
+        // OpenSpace-TTS End
 
         [DataField]
         public int Age { get; set; } = 18;

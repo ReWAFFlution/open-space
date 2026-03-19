@@ -2,6 +2,7 @@ using Content.Client.Humanoid;
 using Content.Client.Message;
 using Content.Client.Players.PlayTimeTracking;
 using Content.Client.Sprite;
+using Content.Shared._OpenSpace.OpenCVars; // OpenSpace-TTS
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
 using Content.Shared.Humanoid;
@@ -191,6 +192,18 @@ namespace Content.Client.Lobby.UI
 
             #endregion Gender
 
+            // OpenSpace-TTS Start
+            #region Voice
+
+            if (configurationManager.GetCVar(OpenCVars.TTSEnabled))
+            {
+                TTSContainer.Visible = true;
+                InitializeVoice();
+            }
+
+            #endregion
+            // OpenSpace-TTS End
+
             RefreshSpecies();
 
             SpeciesButton.OnItemSelected += args =>
@@ -288,6 +301,8 @@ namespace Content.Client.Lobby.UI
 
             RefreshFlavorText();
 
+            UpdateTtsVoicesControls(); // OpenSpace-TTS
+
             #region Dummy
 
             SpriteRotateLeft.OnPressed += _ =>
@@ -375,6 +390,7 @@ namespace Content.Client.Lobby.UI
             UpdateAgeEdit();
             UpdateEyePickers();
             UpdateSaveButton();
+            UpdateTtsVoicesControls(); // OpenSpace-TTS
             UpdateMarkings();
 
             RefreshAntags();

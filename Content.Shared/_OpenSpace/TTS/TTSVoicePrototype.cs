@@ -1,4 +1,5 @@
 
+using System.ComponentModel;
 using Content.Shared.Humanoid;
 using Robust.Shared.Prototypes;
 
@@ -19,10 +20,6 @@ public sealed partial class TTSVoicePrototype : IPrototype
 
     [DataField("sex", required: true)]
     public Sex Sex { get; private set; } = default!;
-
-    [ViewVariables(VVAccess.ReadWrite)]
-    [DataField("speaker", required: true)]
-    public string Speaker { get; private set; } = string.Empty;
 
     /// <summary>
     /// Whether the species is available "at round start" (In the character editor)
