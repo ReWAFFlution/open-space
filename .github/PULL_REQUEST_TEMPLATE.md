@@ -1,36 +1,30 @@
-<!-- Guidelines: https://docs.spacestation14.io/en/getting-started/pr-guideline -->
+<!-- ЭТО НЕ WIZDENОВСКИЙ РЕПОЗИТОРИЙ. ЕСЛИ ВЫ ХОТИТЕ ДОБАВИТЬ ВАШИ ИЗМЕНЕНИЯ НА ВСЕ СЕРВЕРА, СДЕЛАЙТЕ PR НА РЕПОЗИТОРИЙ WIZDEN -->
 
-## About the PR
-<!-- What did you change? -->
+## Краткое описание
+<!-- Что вы предлагаете изменить своим PR-ом? -->
 
-## Why / Balance
-<!-- Discuss how this would affect game balance or explain why it was changed. Link any relevant discussions or issues. -->
+## Почему мы должны добавить это?
+<!-- В чём причина внесения этих изменений? Пожалуйста, разместите здесь ссылки на обсуждения, а также на сообщения об ошибках. Опишите как это повлияет на баланс игры. -->
 
-## Technical details
-<!-- Summary of code changes for easier review. -->
+## Медиа (Видео/Скриншоты)
+<!--
+Если ваш PR содержит внутриигровые изменения, вы должны предоставить скриншоты/видео этих изменений.
+-->
 
-## Media
-<!-- Attach media if the PR makes in-game changes (clothing, items, features, etc).
-Small fixes/refactors are exempt. Media may be used in SS14 progress reports with credit. -->
+## Проверочный пункт
+<!-- Отметьте галочками нужные поля для более быстрого рассмотрения вашего запроса на слияние. -->
 
-## Requirements
-<!-- Confirm the following by placing an X in the brackets without spaces inside (for example: [X] ): -->
-- [ ] I have read and am following the [Pull Request and Changelog Guidelines](https://docs.spacestation14.com/en/general-development/codebase-info/pull-request-guidelines.html).
-- [ ] I have added media to this PR or it does not require an in-game showcase.
-<!-- You should understand that not following the above may get your PR closed at maintainer’s discretion -->
-
-## Breaking changes
-<!-- List any breaking changes, including namespaces, public class/method/field changes, prototype renames; and provide instructions for fixing them.
-This will be posted in #codebase-changes. -->
+- [ ] Перед публикацией/запросом на проверку PR, я убедился что изменения работают.
+- [ ] Я добавил скриншоты/видео изменений, если только этот PR не изменит внутриигровую механику.
+- [ ] Я подтверждаю, что мои изменения лицензированы в соответствии с лицензией [Open Space Лицензия](https://github.com/ss14-art/open-space/blob/master/LICENSE.TXT) и предоставляю разрешение на их использование в этом репозитории в соответствии с его условиями.
 
 **Changelog**
-<!-- Add a Changelog entry to make players aware of new features or changes that could affect gameplay.
-Make sure to read the guidelines and take this Changelog template out of the comment block in order for it to show up.
-Changelog must have a :cl: symbol, so the bot recognizes the changes and adds them to the game's changelog. -->
 <!--
-:cl:
-- add: Added fun!
-- remove: Removed fun!
-- tweak: Changed fun!
-- fix: Fixed fun!
+Если вы хотите, чтобы игроки узнали об изменениях, внесенных в этот PR, укажите это, используя шаблон вне комментария. Кратко и информативно.
+
+:cl: GqXgji
+- add: Добавлен прикол.
+- remove: Прикол удален.
+- tweak: Прикол изменен.
+- fix: Прикол починен.
 -->
