@@ -1,3 +1,4 @@
+using Content.Server._Art.TTS; // Art-TTS
 using Content.Server.Administration;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
@@ -40,6 +41,7 @@ internal static class ServerContentIoC
     public static void Register(IDependencyCollection deps)
     {
         SharedContentIoC.Register(deps);
+        deps.Register<TTSManager>(); // Art-TTS
         deps.Register<IChatManager, ChatManager>();
         deps.Register<ISharedChatManager, ChatManager>();
         deps.Register<IChatSanitizationManager, ChatSanitizationManager>();
