@@ -1,6 +1,7 @@
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Content.Shared._Art.TTS; // Art-TTS
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
 using Content.Shared.Humanoid;
@@ -33,6 +34,11 @@ namespace Content.Shared.Preferences
         public static readonly ProtoId<SpeciesPrototype> DefaultSpecies = "Human";
         private static readonly Regex RestrictedNameRegex = new(@"[^А-ЯЁа-яёA-Za-z0-9 '\-]"); // OpenSpace-Edit
         private static readonly Regex ICNameCaseRegex = new(@"^(?<word>\w)|\b(?<word>\w)(?=\w*$)");
+
+        // Art-TTS Start
+        [DataField]
+        public string Voice { get; set; } = TTSConfig.DefaultVoice;
+        // Art-TTS End
 
         /// <summary>
         /// Job preferences for initial spawn.
@@ -136,7 +142,8 @@ namespace Content.Shared.Preferences
             PreferenceUnavailableMode preferenceUnavailable,
             HashSet<ProtoId<AntagPrototype>> antagPreferences,
             HashSet<ProtoId<TraitPrototype>> traitPreferences,
-            Dictionary<string, RoleLoadout> loadouts)
+            Dictionary<string, RoleLoadout> loadouts,
+            string voice) // Art-TTS
         {
             Name = name;
             FlavorText = flavortext;
@@ -151,6 +158,7 @@ namespace Content.Shared.Preferences
             _antagPreferences = antagPreferences;
             _traitPreferences = traitPreferences;
             _loadouts = loadouts;
+            Voice = voice; // Art-TTS
 
             var hasHighPrority = false;
             foreach (var (key, value) in _jobPriorities)
@@ -181,7 +189,8 @@ namespace Content.Shared.Preferences
                 other.PreferenceUnavailable,
                 new HashSet<ProtoId<AntagPrototype>>(other.AntagPreferences),
                 new HashSet<ProtoId<TraitPrototype>>(other.TraitPreferences),
-                new Dictionary<string, RoleLoadout>(other.Loadouts))
+                new Dictionary<string, RoleLoadout>(other.Loadouts),
+                other.Voice) // Art-TTS
         {
         }
 
@@ -243,6 +252,15 @@ namespace Content.Shared.Preferences
                 age = random.Next(speciesPrototype.MinAge, speciesPrototype.OldAge); // people don't look and keep making 119 year old characters with zero rp, cap it at middle aged
             }
 
+            // Art-TTS Start
+            var voices = prototypeManager.EnumeratePrototypes<TTSVoicePrototype>().ToArray();
+            string voiceId = string.Empty;
+            if (voices.Count() != 0)
+            {
+                voiceId = random.Pick(voices).ID;
+            }
+            // Art-TTS End
+
             var gender = Gender.Epicene;
 
             switch (sex)
@@ -265,6 +283,7 @@ namespace Content.Shared.Preferences
                 Gender = gender,
                 Species = species,
                 Appearance = HumanoidCharacterAppearance.Random(species, sex),
+                Voice = voiceId, // Art-TTS
             };
         }
 
@@ -297,6 +316,13 @@ namespace Content.Shared.Preferences
         {
             return new(this) { Species = species };
         }
+
+        // Art-TTS Start
+        public HumanoidCharacterProfile WithVoice(string voice)
+        {
+            return new(this) { Voice = voice };
+        }
+        // Art-TTS End
 
 
         public HumanoidCharacterProfile WithCharacterAppearance(HumanoidCharacterAppearance appearance)
@@ -623,6 +649,12 @@ namespace Content.Shared.Preferences
 
             _traitPreferences.Clear();
             _traitPreferences.UnionWith(GetValidTraits(traits, prototypeManager));
+
+            // Art-TTS Start
+            prototypeManager.TryIndex<TTSVoicePrototype>(Voice, out var voice);
+            if (voice is null)
+                Voice = TTSConfig.DefaultSexVoice[sex];
+            // Art-TTS End
 
             // Checks prototypes exist for all loadouts and dump / set to default if not.
             var toRemove = new ValueList<string>();

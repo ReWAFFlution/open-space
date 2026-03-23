@@ -1,3 +1,4 @@
+using Content.Shared._Art.TTS; // Art-TTS
 using Content.Shared.Armor;
 using Content.Shared.Atmos;
 using Content.Shared.Chat;
@@ -62,6 +63,8 @@ public partial class InventorySystem
         SubscribeLocalEvent<InventoryComponent, BeforeEmoteEvent>(RelayInventoryEvent);
         SubscribeLocalEvent<InventoryComponent, StoodEvent>(RelayInventoryEvent);
         SubscribeLocalEvent<InventoryComponent, DownedEvent>(RelayInventoryEvent);
+
+        SubscribeLocalEvent<InventoryComponent, TransformSpeakerVoiceEvent>(RelayInventoryEvent); // Art-TTS
 
         // by-ref events
         SubscribeLocalEvent<InventoryComponent, RefreshFrictionModifiersEvent>(RefRelayInventoryEvent);

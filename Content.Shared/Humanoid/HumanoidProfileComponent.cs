@@ -1,3 +1,4 @@
+using Content.Shared._Art.TTS; // Art-TTS
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Preferences;
 using Robust.Shared.Enums;
@@ -24,4 +25,9 @@ public sealed partial class HumanoidProfileComponent : Component
 
     [DataField, AutoNetworkedField]
     public ProtoId<SpeciesPrototype> Species = HumanoidCharacterProfile.DefaultSpecies;
+
+    // Art-TTS Start
+    [DataField("voice")]
+    public ProtoId<TTSVoicePrototype> Voice = TTSConfig.DefaultVoice; // HumanoidCharacterProfile
+    // Art-TTS End
 }

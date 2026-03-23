@@ -26,9 +26,9 @@ public sealed class VoiceMaskBoundUserInterface : BoundUserInterface
 
         _window.OnNameChange += OnNameSelected;
         _window.OnVerbChange += verb => SendMessage(new VoiceMaskChangeVerbMessage(verb));
+        _window.OnVoiceChange += voice => SendMessage(new VoiceMaskChangeVoiceMessage(voice)); // Art-TTS
         _window.OnToggle += OnToggle;
         _window.OnAccentToggle += OnAccentToggle;
-        _window.OnVoiceChange += voice => SendMessage(new VoiceMaskChangeVoiceMessage(voice)); // Art-TTS
     }
 
     private void OnNameSelected(string name)

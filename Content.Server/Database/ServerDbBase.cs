@@ -209,6 +209,7 @@ namespace Content.Server.Database
             var appearance = humanoid.Appearance;
             var dataNode = _serialization.WriteValue(appearance.Markings, alwaysWrite: true, notNullableOverride: true);
 
+            profile.Voice = humanoid.Voice; // Art-TTS
             profile.CharacterName = humanoid.Name;
             profile.FlavorText = humanoid.FlavorText;
             profile.Species = humanoid.Species;

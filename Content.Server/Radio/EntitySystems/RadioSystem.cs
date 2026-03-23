@@ -1,6 +1,7 @@
 using Content.Server.Administration.Logs;
 using Content.Server.Chat.Systems;
 using Content.Server.Power.Components;
+using Content.Shared._Art.TTS; // Art-TTS
 using Content.Shared.Chat;
 using Content.Shared.Database;
 using Content.Shared.Radio;
@@ -53,6 +54,13 @@ public sealed class RadioSystem : EntitySystem
 
     private void OnIntrinsicReceive(EntityUid uid, IntrinsicRadioReceiverComponent component, ref RadioReceiveEvent args)
     {
+        // Art-TTS Start
+        if (args.Voice is not null)
+        {
+            var ev = new TTSRadioPlayEvent(args.Message, args.Voice, GetNetEntity(uid), GetNetEntity(args.MessageSource));
+            RaiseLocalEvent(uid, ev);
+        }
+        // Art-TTS End
         if (TryComp(uid, out ActorComponent? actor))
             _netMan.ServerSendMessage(args.ChatMsg, actor.PlayerSession.Channel);
     }
@@ -92,6 +100,11 @@ public sealed class RadioSystem : EntitySystem
             ? FormattedMessage.EscapeText(message)
             : message;
 
+        // Art-TTS Start
+        string? voice = null;
+        if (TryComp<TTSComponent>(messageSource, out var tts))
+            voice = tts.VoicePrototypeId;
+        // Art-TTS End
         var wrappedMessage = Loc.GetString(speech.Bold ? "chat-radio-message-wrap-bold" : "chat-radio-message-wrap",
             ("color", channel.Color),
             ("fontType", speech.FontId),
@@ -109,7 +122,7 @@ public sealed class RadioSystem : EntitySystem
             NetEntity.Invalid,
             null);
         var chatMsg = new MsgChatMessage { Message = chat };
-        var ev = new RadioReceiveEvent(message, messageSource, channel, radioSource, chatMsg);
+        var ev = new RadioReceiveEvent(message, messageSource, channel, radioSource, chatMsg, voice); // voice // Art-TTS
 
         var sendAttemptEv = new RadioSendAttemptEvent(channel, radioSource);
         RaiseLocalEvent(ref sendAttemptEv);

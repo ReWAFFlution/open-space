@@ -1,5 +1,6 @@
 using Content.Shared.Speech;
 using Robust.Shared.Prototypes;
+using Content.Shared._Art.TTS; // Art-TTS
 
 namespace Content.Shared.VoiceMask;
 
@@ -14,6 +15,12 @@ namespace Content.Shared.VoiceMask;
 [RegisterComponent]
 public sealed partial class VoiceMaskComponent : Component
 {
+    // Art-TTS Start
+    [DataField]
+    [ViewVariables(VVAccess.ReadWrite)]
+    public string VoiceId = TTSConfig.DefaultVoice;
+    // Art-TTS End
+
     /// <summary>
     ///     The name that will override an entities default name. If null, it will use the default override.
     /// </summary>

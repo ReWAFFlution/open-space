@@ -3,7 +3,9 @@ using System.Linq;
 using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
+using Content.Server._Art.TTS;
 using Content.Server.Database;
+using Content.Shared._Art.TTS;
 using Content.Shared.Body;
 using Content.Shared.CCVar;
 using Content.Shared.Construction.Prototypes;
@@ -113,6 +115,10 @@ namespace Content.Server.Preferences.Managers
             if (!_prototypeManager.HasIndex<SpeciesPrototype>(species))
                 species = HumanoidCharacterProfile.DefaultSpecies;
 
+            var voice = profile.Voice;
+            if (voice == String.Empty)
+                voice = TTSConfig.DefaultSexVoice[sex];
+
             if (profile.OrganMarkings?.RootElement is { } element)
             {
                 var data = element.ToDataNode();
@@ -182,10 +188,11 @@ namespace Content.Server.Preferences.Managers
                 ),
                 spawnPriority,
                 jobs,
-                (PreferenceUnavailableMode) profile.PreferenceUnavailable,
+                (PreferenceUnavailableMode)profile.PreferenceUnavailable,
                 antags.ToHashSet(),
                 traits.ToHashSet(),
-                loadouts
+                loadouts,
+                voice // Art-TTS
             );
         }
 

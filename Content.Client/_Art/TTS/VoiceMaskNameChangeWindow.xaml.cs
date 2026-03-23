@@ -1,5 +1,5 @@
 using System.Linq;
-using Content.Shared._Art.ACVar;
+using Content.Shared._Art.ArtCVar;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Content.Shared._Art.TTS;
@@ -18,8 +18,8 @@ public sealed partial class VoiceMaskNameChangeWindow : FancyWindow
     {
         if (_cfg is null)
             return;
-        TTSContainer.Visible = _cfg.GetCVar(ArtCVars.TTSEnabled);
-        if (!_cfg.GetCVar(ArtCVars.TTSEnabled))
+        TTSContainer.Visible = _cfg.GetCVar(ArtCVars.TTSClientEnabled);
+        if (!_cfg.GetCVar(ArtCVars.TTSClientEnabled))
             return;
         VoiceSelector.OnItemSelected += args =>
         {

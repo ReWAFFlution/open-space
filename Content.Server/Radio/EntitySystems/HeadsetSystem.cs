@@ -1,3 +1,4 @@
+using Content.Shared._Art.TTS; // Art-TTS
 using Content.Shared.Chat;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Radio;
@@ -109,7 +110,16 @@ public sealed class HeadsetSystem : SharedHeadsetSystem
             RaiseLocalEvent(parent, ref relayEvent);
         }
 
+        // Art-TTS Start
         if (TryComp(parent, out ActorComponent? actor))
+        {
             _netMan.ServerSendMessage(args.ChatMsg, actor.PlayerSession.Channel);
+            if (args.Voice is string voice)
+            {
+                var ev = new TTSRadioPlayEvent(args.Message, voice, GetNetEntity(uid), GetNetEntity(args.MessageSource));
+                RaiseLocalEvent(Transform(uid).ParentUid, ev);
+            }
+        }
+        // Art-TTS End
     }
 }

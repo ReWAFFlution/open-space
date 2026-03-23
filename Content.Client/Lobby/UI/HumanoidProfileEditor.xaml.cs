@@ -193,7 +193,7 @@ namespace Content.Client.Lobby.UI
             #endregion Gender
 
             // Art-TTS End
-            if (configurationManager.GetCVar(ArtCVars.TTSEnabled))
+            if (configurationManager.GetCVar(ArtCVars.TTSClientEnabled))
             {
                 TTSContainer.Visible = true;
                 InitializeVoice();
@@ -297,7 +297,7 @@ namespace Content.Client.Lobby.UI
 
             RefreshFlavorText();
 
-            UpdateTtsVoicesControls(); // Art-TTS
+            UpdateTTSVoicesControls(); // Art-TTS
 
             #region Dummy
 

@@ -13,12 +13,14 @@ public sealed class VoiceMaskBuiState : BoundUserInterfaceState
 {
     public readonly string Name;
     public readonly string? Verb;
+    public readonly string Voice; // Art-TTS
     public readonly bool Active;
     public readonly bool AccentHide;
 
-    public VoiceMaskBuiState(string name, string? verb, bool active, bool accentHide)
+    public VoiceMaskBuiState(string name, string voice, string? verb, bool active, bool accentHide) // Art-TTS
     {
         Name = name;
+        Voice = voice; // Art-TTS
         Verb = verb;
         Active = active;
         AccentHide = accentHide;

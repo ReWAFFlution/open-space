@@ -1,5 +1,5 @@
 using Content.Shared.Chat;
-using Content.Shared._Art.ACVar;
+using Content.Shared._Art.ArtCVar;
 using Content.Shared._Art.TTS;
 using Robust.Client.Audio;
 using Robust.Shared.Audio.Components;
