@@ -1095,7 +1095,7 @@ public sealed class PullingSystem : EntitySystem
     private bool CanCombatGrab(EntityUid pullerUid, EntityUid targetUid)
     {
         return _combatMode.IsInCombatMode(pullerUid)
-               && HasComp<HumanoidAppearanceComponent>(pullerUid)
+               && HasComp<HumanoidProfileComponent>(pullerUid)
                && HasComp<MobStateComponent>(targetUid);
     }
 

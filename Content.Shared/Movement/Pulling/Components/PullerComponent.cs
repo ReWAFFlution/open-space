@@ -83,17 +83,16 @@ public sealed partial class PullerComponent : Component
 
     [DataField]
     public ProtoId<AlertPrototype> PullingAlert = "Pulling";
-
-    // OpenSpace-Edit Start
-    public enum GrabStage : byte
-    {
-        None = 0,
-        Light = 1,
-        Medium = 2,
-        Heavy = 3,
-        Choke = 4
-    }
-    // OpenSpace-Edit End
 }
-
 public sealed partial class StopPullingAlertEvent : BaseAlertEvent;
+
+// OpenSpace-Edit Start
+public enum GrabStage : byte
+{
+    None = 0,
+    Light = 1,
+    Medium = 2,
+    Heavy = 3,
+    Choke = 4
+}
+// OpenSpace-Edit End
