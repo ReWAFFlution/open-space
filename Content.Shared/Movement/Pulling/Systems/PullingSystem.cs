@@ -1,19 +1,30 @@
+using Content.Shared._OpenSpace.Effects; // OpenSpace-Edit
+using Content.Shared._OpenSpace.Movement.Pulling.Components; // OpenSpace-Edit
 using Content.Shared.ActionBlocker;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Alert;
 using Content.Shared.Buckle.Components;
+using Content.Shared.CombatMode; // OpenSpace-Edit
+using Content.Shared.Climbing.Components; // OpenSpace-Edit
+using Content.Shared.Climbing.Systems; // OpenSpace-Edit
 using Content.Shared.Cuffs;
 using Content.Shared.Cuffs.Components;
 using Content.Shared.Database;
+using Content.Shared.DragDrop; // OpenSpace-Edit
+using Content.Shared.Effects; // OpenSpace-Edit
 using Content.Shared.Hands;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Humanoid; // OpenSpace-Edit
 using Content.Shared.IdentityManagement;
 using Content.Shared.Input;
 using Content.Shared.Interaction;
+using Content.Shared.Interaction.Components; // OpenSpace-Edit
+using Content.Shared.Interaction.Events; // OpenSpace-Edit
 using Content.Shared.Inventory.VirtualItem;
 using Content.Shared.Item;
 using Content.Shared.Mobs;
+using Content.Shared.Mobs.Components; // OpenSpace-Edit
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Events;
 using Content.Shared.Movement.Pulling.Components;
@@ -21,17 +32,24 @@ using Content.Shared.Movement.Pulling.Events;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Pulling.Events;
+using Content.Shared.Speech.Muting; // OpenSpace-Edit
 using Content.Shared.Standing;
+using Content.Shared.Stunnable; // OpenSpace-Edit
 using Content.Shared.Verbs;
+using Robust.Shared.Audio.Systems; // OpenSpace-Edit
 using Robust.Shared.Containers;
 using Robust.Shared.Input.Binding;
+using Robust.Shared.Map; // OpenSpace-Edit
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Player;
+using Robust.Shared.Random; // OpenSpace-Edit
+using Robust.Shared.Network; // OpenSpace-Edit
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using System.Numerics; // OpenSpace-Edit
 
 namespace Content.Shared.Movement.Pulling.Systems;
 
@@ -40,6 +58,7 @@ namespace Content.Shared.Movement.Pulling.Systems;
 /// </summary>
 public sealed class PullingSystem : EntitySystem
 {
+    private static readonly TimeSpan BreakAttemptCooldown = TimeSpan.FromSeconds(0.5); // OpenSpace-Edit
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
     [Dependency] private readonly ActionBlockerSystem _blocker = default!;
@@ -53,6 +72,46 @@ public sealed class PullingSystem : EntitySystem
     [Dependency] private readonly HeldSpeedModifierSystem _clothingMoveSpeed = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedVirtualItemSystem _virtual = default!;
+
+    // OpenSpace-Edit Start
+    [Dependency] private readonly SharedCombatModeSystem _combatMode = default!;
+    [Dependency] private readonly SharedOutlineFlashEffectSystem _outlineFlash = default!;
+    [Dependency] private readonly SharedColorFlashEffectSystem _colorFlash = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly INetManager _netMan = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly StandingStateSystem _standing = default!;
+    [Dependency] private readonly SharedStunSystem _stun = default!;
+    [Dependency] private readonly IMapManager _mapManager = default!;
+    [Dependency] private readonly ClimbSystem _climbSystem = default!;
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        var chokedQuery = EntityQueryEnumerator<ChokedComponent>();
+        while (chokedQuery.MoveNext(out var target, out var choked))
+        {
+            if (choked.Puller is not { } puller)
+                continue;
+
+            if (_netMan.IsClient)
+            {
+                if (Transform(target).ParentUid != puller)
+                    _transform.SetParent(target, puller);
+                _transform.SetLocalPositionNoLerp(target, choked.Offset);
+                _transform.SetWorldRotation(target, choked.LockedWorldRotation);
+                continue;
+            }
+
+            if (!_netMan.IsServer)
+                continue;
+
+            _transform.SetWorldRotation(target, choked.LockedWorldRotation);
+        }
+    }
+    // OpenSpace-Edit End
 
     public override void Initialize()
     {
@@ -85,6 +144,20 @@ public sealed class PullingSystem : EntitySystem
         SubscribeLocalEvent<PullableComponent, StrappedEvent>(OnBuckled);
         SubscribeLocalEvent<PullableComponent, BuckledEvent>(OnGotBuckled);
         SubscribeLocalEvent<ActivePullerComponent, TargetHandcuffedEvent>(OnTargetHandcuffed);
+
+        // OpenSpace-Edit Start
+        SubscribeLocalEvent<BuckleComponent, BuckleAttemptEvent>(OnBuckleAttempt);
+        SubscribeLocalEvent<ClimbableComponent, InteractUsingEvent>(OnClimbableInteractUsing);
+        SubscribeLocalEvent<ChokedComponent, StandUpAttemptEvent>(OnStandUpAttempt);
+        SubscribeLocalEvent<ChokedComponent, ComponentShutdown>(OnChokedShutdown);
+        SubscribeLocalEvent<ChokedComponent, AttackAttemptEvent>(OnChokedAttackAttempt);
+        SubscribeLocalEvent<PullableComponent, UpdateCanMoveEvent>(OnPullableUpdateCanMove);
+        SubscribeLocalEvent<PullableComponent, DragDropDraggedEvent>(OnPullableDragDropGrab);
+        SubscribeLocalEvent<PullerComponent, AttackAttemptEvent>(OnPullerAttackAttempt);
+        SubscribeLocalEvent<PullerComponent, UserInteractUsingEvent>(OnPullerInteractUsing);
+        SubscribeLocalEvent<PullerComponent, UserInteractHandEvent>(OnPullerInteractHand);
+        SubscribeLocalEvent<PullerComponent, MoveEvent>(OnPullerMove);
+        // OpenSpace-Edit End
 
         CommandBinds.Builder
             .Bind(ContentKeyFunctions.ReleasePulledObject, InputCmdHandler.FromDelegate(OnReleasePulledObject, handle: false))
@@ -162,6 +235,31 @@ public sealed class PullingSystem : EntitySystem
         StopPulling(ent, ent);
     }
 
+    // OpenSpace-Edit Start
+    private void OnBuckleAttempt(Entity<BuckleComponent> ent, ref BuckleAttemptEvent args)
+    {
+        if (args.Cancelled)
+            return;
+
+        var target = args.Buckle.Owner;
+
+        if (HasComp<ChokedComponent>(target))
+        {
+            args.Cancelled = true;
+            return;
+        }
+
+        if (!TryComp<PullableComponent>(target, out var pullable) || pullable.Puller == null)
+            return;
+
+        if (!TryComp<PullerComponent>(pullable.Puller, out var puller))
+            return;
+
+        if (puller.GrabStage is GrabStage.Medium or GrabStage.Heavy or GrabStage.Choke)
+            args.Cancelled = true;
+    }
+    // OpenSpace-Edit End
+
     private void OnGetInteractingEntities(Entity<PullableComponent> ent, ref GetInteractingEntitiesEvent args)
     {
         if (ent.Comp.Puller != null)
@@ -207,6 +305,24 @@ public sealed class PullingSystem : EntitySystem
         TryStopPull(ent.Comp.Pulling.Value, pulling, ent.Owner);
     }
 
+    // OpenSpace-Edit Start
+    private void OnPullerMove(EntityUid uid, PullerComponent component, ref MoveEvent args)
+    {
+        if (!_netMan.IsServer)
+            return;
+
+        if (component.GrabStage != GrabStage.Choke || component.Pulling is not { } target)
+            return;
+
+        if (!TryComp<ChokedComponent>(target, out var choked) || choked.Puller != uid)
+            return;
+
+        var pullerMap = _transform.GetMapCoordinates(uid);
+        _transform.SetMapCoordinates(target,
+            new MapCoordinates(pullerMap.Position + choked.Offset, pullerMap.MapId));
+    }
+    // OpenSpace-Edit End
+
     private void OnPullableContainerInsert(Entity<PullableComponent> ent, ref EntGotInsertedIntoContainerMessage args)
     {
         TryStopPull(ent.Owner, ent.Comp);
@@ -231,6 +347,178 @@ public sealed class PullingSystem : EntitySystem
 
         args.Handled = TryStopPull(ent, ent, ent);
     }
+
+    // OpenSpace-Edit Start
+    private void OnStandUpAttempt(Entity<ChokedComponent> ent, ref StandUpAttemptEvent args)
+    {
+        args.Cancelled = true;
+    }
+
+    private void OnPullableUpdateCanMove(EntityUid uid, PullableComponent component, ref UpdateCanMoveEvent args)
+    {
+        if (!component.BeingPulled || component.Puller == null)
+            return;
+
+        if (component.PullerGrabStage is GrabStage.Medium or GrabStage.Heavy or GrabStage.Choke)
+            args.Cancel();
+    }
+
+    private void OnChokedShutdown(Entity<ChokedComponent> ent, ref ComponentShutdown args)
+    {
+        if (ent.Comp.Puller is { } puller)
+            _virtual.DeleteInHandsMatching(puller, ent.Owner);
+    }
+
+    private void OnChokedAttackAttempt(Entity<ChokedComponent> ent, ref AttackAttemptEvent args)
+    {
+        args.Cancel();
+    }
+
+    private void OnPullableDragDropGrab(EntityUid uid, PullableComponent component, ref DragDropDraggedEvent args)
+    {
+        if (!TryComp<PullerComponent>(args.User, out var pullerComp) ||
+            pullerComp.Pulling is not { } pulled ||
+            pulled != uid ||
+            pullerComp.GrabStage is GrabStage.None)
+        {
+            return;
+        }
+
+        if (!TryComp<ClimbableComponent>(args.Target, out _))
+            return;
+
+        if (!TryStopPull(pulled, component, args.User))
+            return;
+
+        _transform.SetCoordinates(pulled, _transform.GetMoverCoordinates(args.Target));
+        _stun.TryUpdateParalyzeDuration(pulled, TimeSpan.FromSeconds(4));
+        args.Handled = true;
+    }
+
+    private void OnClimbableInteractUsing(EntityUid uid, ClimbableComponent component, ref InteractUsingEvent args)
+    {
+        if (args.Handled)
+            return;
+
+        if (!TryComp<PullerComponent>(args.User, out var pullerComp) ||
+            pullerComp.Pulling is not { } pulled ||
+            pullerComp.GrabStage is GrabStage.None)
+        {
+            return;
+        }
+
+        if (args.Used == uid)
+            return;
+
+        if (!TryComp<VirtualItemComponent>(args.Used, out var virt) || virt.BlockingEntity != pulled)
+            return;
+
+        if (!TryComp<PullableComponent>(pulled, out var pullableComp))
+            return;
+
+        if (!TryStopPull(pulled, pullableComp, args.User))
+            return;
+
+        _climbSystem.ForciblySetClimbing(pulled, uid);
+        _stun.TryUpdateParalyzeDuration(pulled, TimeSpan.FromSeconds(4));
+        args.Handled = true;
+    }
+
+    private void OnPullerInteractUsing(EntityUid uid, PullerComponent component, ref UserInteractUsingEvent args)
+    {
+        if (component.Pulling is not { } pulled ||
+            component.GrabStage is GrabStage.None)
+        {
+            return;
+        }
+
+        if (!TryComp<ClimbableComponent>(args.Target, out _))
+            return;
+
+        if (!HasPullVirtualInHands(uid, pulled))
+            return;
+
+        if (!TryComp<PullableComponent>(pulled, out var pullableComp))
+            return;
+
+        if (!TryStopPull(pulled, pullableComp, uid))
+            return;
+
+        _transform.SetCoordinates(pulled, _transform.GetMoverCoordinates(args.Target));
+        _stun.TryUpdateParalyzeDuration(pulled, TimeSpan.FromSeconds(4));
+        args.Handled = true;
+    }
+
+    private void OnPullerInteractHand(EntityUid uid, PullerComponent component, ref UserInteractHandEvent args)
+    {
+        if (args.Handled)
+            return;
+
+        if (component.Pulling is not { } pulled ||
+            component.GrabStage is GrabStage.None)
+        {
+            return;
+        }
+
+        if (!TryComp<ClimbableComponent>(args.Target, out _))
+            return;
+
+        if (!HasPullVirtualInHands(uid, pulled))
+            return;
+
+        if (!TryComp<PullableComponent>(pulled, out var pullableComp))
+            return;
+
+        if (!TryStopPull(pulled, pullableComp, uid))
+            return;
+
+        _transform.SetCoordinates(pulled, _transform.GetMoverCoordinates(args.Target));
+        _stun.TryUpdateParalyzeDuration(pulled, TimeSpan.FromSeconds(4));
+        args.Handled = true;
+    }
+
+    private void OnPullerAttackAttempt(EntityUid uid, PullerComponent component, ref AttackAttemptEvent args)
+    {
+        if (args.Cancelled)
+            return;
+
+        if (component.Pulling is not { } pulled ||
+            component.GrabStage is GrabStage.None)
+        {
+            return;
+        }
+
+        if (args.Target is not { } target || !TryComp<ClimbableComponent>(target, out _))
+            return;
+
+        if (!HasPullVirtualInHands(uid, pulled))
+            return;
+
+        if (!TryComp<PullableComponent>(pulled, out var pullableComp))
+            return;
+
+        if (!TryStopPull(pulled, pullableComp, uid))
+            return;
+
+        _transform.SetCoordinates(pulled, _transform.GetMoverCoordinates(target));
+        _stun.TryUpdateParalyzeDuration(pulled, TimeSpan.FromSeconds(4));
+        args.Cancel();
+    }
+
+    private bool HasPullVirtualInHands(EntityUid user, EntityUid pulled)
+    {
+        if (!TryComp<HandsComponent>(user, out var hands))
+            return false;
+
+        foreach (var held in _handsSystem.EnumerateHeld((user, hands)))
+        {
+            if (TryComp<VirtualItemComponent>(held, out var virt) && virt.BlockingEntity == pulled)
+                return true;
+        }
+
+        return false;
+    }
+    // OpenSpace-Edit End
 
     public override void Shutdown()
     {
@@ -314,7 +602,32 @@ public sealed class PullingSystem : EntitySystem
         if (!_blocker.CanMove(entity))
             return;
 
-        TryStopPull(uid, component, user: uid);
+        // OpenSpace-Edit Start
+        if (_timing.CurTime < component.NextBreakAttempt)
+            return;
+
+        var chance = 1f;
+        if (component.Puller != null && TryComp(component.Puller, out PullerComponent? pullerComp))
+        {
+            chance = pullerComp.GrabStage switch
+            {
+                GrabStage.Medium => 0.5f,
+                GrabStage.Heavy => 0.15f,
+                GrabStage.Choke => 0f,
+                _ => 1f
+            };
+        }
+
+        if (_random.Prob(chance))
+        {
+            TryStopPull(uid, component, user: uid);
+        }
+        else
+        {
+            component.NextBreakAttempt = _timing.CurTime + BreakAttemptCooldown;
+            Dirty(uid, component);
+        }
+        // OpenSpace-Edit End
     }
 
     private void OnPullableCollisionChange(EntityUid uid, PullableComponent component, ref CollisionChangeEvent args)
@@ -340,6 +653,15 @@ public sealed class PullingSystem : EntitySystem
 
         if (args.Joint.ID != component.PullJointId || component.Puller == null)
             return;
+
+        // OpenSpace-Edit Start
+        if (TryComp<PullerComponent>(component.Puller, out var pullerComp) &&
+            pullerComp.GrabStage == GrabStage.Choke &&
+            pullerComp.Pulling == uid)
+        {
+            return;
+        }
+        // OpenSpace-Edit End
 
         StopPulling(uid, component);
     }
@@ -373,6 +695,7 @@ public sealed class PullingSystem : EntitySystem
 
         pullableComp.PullJointId = null;
         pullableComp.Puller = null;
+        pullableComp.PullerGrabStage = GrabStage.None; // OpenSpace-Edit
         Dirty(pullableUid, pullableComp);
 
         // No more joints with puller -> force stop pull.
@@ -381,6 +704,31 @@ public sealed class PullingSystem : EntitySystem
             var pullerUid = oldPuller.Value;
             _alertsSystem.ClearAlert(pullerUid, pullerComp.PullingAlert);
             pullerComp.Pulling = null;
+            // OpenSpace-Edit Start
+            if (pullerComp.GrabStage == GrabStage.Choke && TryComp<ChokedComponent>(pullableUid, out var choked))
+            {
+                var world = _transform.GetMapCoordinates(pullableUid);
+                EntityUid oldParent;
+                if (choked.HadOldParent && choked.OldParent is { } parent)
+                    oldParent = parent;
+                else
+                    oldParent = _mapManager.GetMapEntityId(world.MapId);
+
+                _transform.SetParent(pullableUid, oldParent);
+                _transform.SetMapCoordinates(pullableUid, world);
+                if (choked.HadPhysics && TryComp<PhysicsComponent>(pullableUid, out var chokedPhysics))
+                {
+                    _physics.SetBodyType(pullableUid, choked.OldBodyType, body: chokedPhysics);
+                    _physics.SetCanCollide(pullableUid, choked.OldCanCollide, body: chokedPhysics);
+                }
+                if (choked.AddedMuted)
+                    RemComp<MutedComponent>(pullableUid);
+                _virtual.DeleteInHandsMatching(pullerUid, pullableUid);
+                RemComp<ChokedComponent>(pullableUid);
+            }
+
+            pullerComp.GrabStage = GrabStage.None;
+            // OpenSpace-Edit End
             Dirty(oldPuller.Value, pullerComp);
 
             // Messaging
@@ -438,6 +786,13 @@ public sealed class PullingSystem : EntitySystem
             return false;
         }
 
+        // OpenSpace-Edit Start
+        if (HasComp<ChokedComponent>(puller))
+        {
+            return false;
+        }
+        // OpenSpace-Edit End
+
         if (pullerComp.NeedsHands
             && !_handsSystem.TryGetEmptyHand(puller, out _)
             && pullerComp.Pulling == null)
@@ -484,6 +839,69 @@ public sealed class PullingSystem : EntitySystem
 
         if (pullable.Comp.Puller == pullerUid)
         {
+            // OpenSpace-Edit Start
+            if (CanCombatGrab(pullerUid, pullable.Owner))
+            {
+                if (!TryComp<PullerComponent>(pullerUid, out var pullerComp))
+                    return true;
+
+                switch (pullerComp.GrabStage)
+                {
+                    case GrabStage.None:
+                    case GrabStage.Light:
+                        {
+                            if (_timing.CurTime < pullerComp.NextMediumGrab)
+                                return true;
+                            DoGrabStage(pullerUid, pullable.Owner, "pulling-combat-medium-popup");
+                            pullerComp.GrabStage = GrabStage.Medium;
+                            pullerComp.NextHeavyGrab = _timing.CurTime + pullerComp.HeavyGrabCooldown;
+                            pullable.Comp.PullerGrabStage = GrabStage.Medium;
+                            Dirty(pullerUid, pullerComp);
+                            Dirty(pullable.Owner, pullable.Comp);
+                            _modifierSystem.RefreshMovementSpeedModifiers(pullerUid);
+                            var severity = GetGrabSeverity(pullerComp.GrabStage);
+                            _alertsSystem.ShowAlert(pullerUid, pullerComp.PullingAlert, severity);
+                            _alertsSystem.ShowAlert(pullable.Owner, pullable.Comp.PulledAlert, severity);
+                            return true;
+                        }
+                    case GrabStage.Medium:
+                        {
+                            if (_timing.CurTime < pullerComp.NextHeavyGrab)
+                                return true;
+                            DoGrabStage(pullerUid, pullable.Owner, "pulling-combat-heavy-popup");
+                            pullerComp.GrabStage = GrabStage.Heavy;
+                            pullerComp.NextChokeGrab = _timing.CurTime + pullerComp.ChokeGrabCooldown;
+                            pullable.Comp.PullerGrabStage = GrabStage.Heavy;
+                            Dirty(pullerUid, pullerComp);
+                            Dirty(pullable.Owner, pullable.Comp);
+                            _modifierSystem.RefreshMovementSpeedModifiers(pullerUid);
+                            var severity = GetGrabSeverity(pullerComp.GrabStage);
+                            _alertsSystem.ShowAlert(pullerUid, pullerComp.PullingAlert, severity);
+                            _alertsSystem.ShowAlert(pullable.Owner, pullable.Comp.PulledAlert, severity);
+                            return true;
+                        }
+                    case GrabStage.Heavy:
+                        {
+                            if (_timing.CurTime < pullerComp.NextChokeGrab)
+                                return true;
+                            DoGrabStage(pullerUid, pullable.Owner, "pulling-combat-choke-popup");
+                            pullerComp.GrabStage = GrabStage.Choke;
+                            EnsureChokeState(pullerUid, pullable.Owner);
+                            pullable.Comp.PullerGrabStage = GrabStage.Choke;
+                            Dirty(pullerUid, pullerComp);
+                            Dirty(pullable.Owner, pullable.Comp);
+                            _modifierSystem.RefreshMovementSpeedModifiers(pullerUid);
+                            var severity = GetGrabSeverity(pullerComp.GrabStage);
+                            _alertsSystem.ShowAlert(pullerUid, pullerComp.PullingAlert, severity);
+                            _alertsSystem.ShowAlert(pullable.Owner, pullable.Comp.PulledAlert, severity);
+                            return true;
+                        }
+                    case GrabStage.Choke:
+                    default:
+                        return true;
+                }
+            }
+            // OpenSpace-Edit End
             return TryStopPull(pullable, pullable.Comp);
         }
 
@@ -552,7 +970,15 @@ public sealed class PullingSystem : EntitySystem
 
         EnsureComp<ActivePullerComponent>(pullerUid);
         pullerComp.Pulling = pullableUid;
+        // OpenSpace-Edit Start
+        pullerComp.GrabStage = GrabStage.None;
+        pullerComp.NextMediumGrab = _timing.CurTime + pullerComp.LightGrabDelay;
+        // OpenSpace-Edit End
         pullableComp.Puller = pullerUid;
+        // OpenSpace-Edit Start
+        pullableComp.PullerGrabStage = GrabStage.None;
+        pullableComp.NextBreakAttempt = _timing.CurTime;
+        // OpenSpace-Edit End
 
         // store the pulled entity's physics FixedRotation setting in case we change it
         pullableComp.PrevFixedRotation = pullablePhysics.FixedRotation;
@@ -580,8 +1006,11 @@ public sealed class PullingSystem : EntitySystem
         // Messaging
         var message = new PullStartedMessage(pullerUid, pullableUid);
         _modifierSystem.RefreshMovementSpeedModifiers(pullerUid);
-        _alertsSystem.ShowAlert(pullerUid, pullerComp.PullingAlert);
-        _alertsSystem.ShowAlert(pullableUid, pullableComp.PulledAlert);
+        // OpenSpace-Edit Start
+        var initialSeverity = GetGrabSeverity(pullerComp.GrabStage);
+        _alertsSystem.ShowAlert(pullerUid, pullerComp.PullingAlert, initialSeverity);
+        _alertsSystem.ShowAlert(pullableUid, pullableComp.PulledAlert, initialSeverity);
+        // OpenSpace-Edit End
 
         RaiseLocalEvent(pullerUid, message);
         RaiseLocalEvent(pullableUid, message);
@@ -589,9 +1018,29 @@ public sealed class PullingSystem : EntitySystem
         Dirty(pullerUid, pullerComp);
         Dirty(pullableUid, pullableComp);
 
-        var pullingMessage =
-            Loc.GetString("getting-pulled-popup", ("puller", Identity.Entity(pullerUid, EntityManager)));
-        _popup.PopupEntity(pullingMessage, pullableUid, pullableUid);
+        // OpenSpace-Edit Start
+        if (!CanCombatGrab(pullerUid, pullableUid))
+        {
+            var pullingMessage =
+                Loc.GetString("getting-pulled-popup", ("puller", Identity.Entity(pullerUid, EntityManager)));
+            if (_netMan.IsServer)
+                _popup.PopupEntity(pullingMessage, pullableUid, pullableUid);
+        }
+
+        if (CanCombatGrab(pullerUid, pullableUid))
+        {
+            DoGrabStage(pullerUid, pullableUid, "pulling-combat-medium-popup");
+            pullerComp.GrabStage = GrabStage.Medium;
+            pullerComp.NextHeavyGrab = _timing.CurTime + pullerComp.HeavyGrabCooldown;
+            pullableComp.PullerGrabStage = GrabStage.Medium;
+            Dirty(pullerUid, pullerComp);
+            Dirty(pullableUid, pullableComp);
+            _modifierSystem.RefreshMovementSpeedModifiers(pullerUid);
+            var severity = GetGrabSeverity(pullerComp.GrabStage);
+            _alertsSystem.ShowAlert(pullerUid, pullerComp.PullingAlert, severity);
+            _alertsSystem.ShowAlert(pullableUid, pullableComp.PulledAlert, severity);
+        }
+        // OpenSpace-Edit End
 
         _adminLogger.Add(LogType.Action, LogImpact.Low,
             $"{ToPrettyString(pullerUid):user} started pulling {ToPrettyString(pullableUid):target}");
@@ -605,6 +1054,16 @@ public sealed class PullingSystem : EntitySystem
         if (pullerUidNull == null)
             return true;
 
+        // OpenSpace-Edit Start
+        if (TryComp<PullerComponent>(pullerUidNull.Value, out var pullerComp) &&
+            pullerComp.GrabStage == GrabStage.Choke &&
+            pullerComp.Pulling == pullableUid &&
+            user != pullerUidNull.Value)
+        {
+            return false;
+        }
+        // OpenSpace-Edit End
+
         var msg = new AttemptStopPullingEvent(user);
         RaiseLocalEvent(pullableUid, ref msg, true);
 
@@ -614,4 +1073,83 @@ public sealed class PullingSystem : EntitySystem
         StopPulling(pullableUid, pullable);
         return true;
     }
+    // OpenSpace-Edit Start
+    private void DoGrabStage(EntityUid pullerUid, EntityUid targetUid, string locKey, bool playSound = true)
+    {
+        var popupMessage = Loc.GetString(locKey,
+            ("target", Identity.Entity(targetUid, EntityManager)));
+        if (_netMan.IsServer)
+            _popup.PopupEntity(popupMessage, pullerUid, pullerUid);
+        var targetKey = locKey.Replace("-popup", "-target-popup");
+        var targetMessage = Loc.GetString(targetKey,
+            ("puller", Identity.Entity(pullerUid, EntityManager)));
+        if (_netMan.IsServer)
+            _popup.PopupEntity(targetMessage, targetUid, targetUid);
+        _outlineFlash.RaiseEffect(targetUid, pullerUid);
+        _colorFlash.RaiseEffect(Color.Yellow, new List<EntityUid> { targetUid },
+            Filter.Pvs(targetUid, entityManager: EntityManager));
+        if (playSound && _netMan.IsServer && TryComp<CombatModeComponent>(pullerUid, out var combatMode))
+            _audio.PlayPvs(combatMode.DisarmSuccessSound, targetUid);
+    }
+
+    private bool CanCombatGrab(EntityUid pullerUid, EntityUid targetUid)
+    {
+        return _combatMode.IsInCombatMode(pullerUid)
+               && HasComp<HumanoidAppearanceComponent>(pullerUid)
+               && HasComp<MobStateComponent>(targetUid);
+    }
+
+    private static short GetGrabSeverity(GrabStage stage)
+    {
+        return stage switch
+        {
+            GrabStage.Medium => 1,
+            GrabStage.Heavy => 2,
+            GrabStage.Choke => 3,
+            _ => 0
+        };
+    }
+
+    private void EnsureChokeState(EntityUid pullerUid, EntityUid targetUid)
+    {
+        if (!_netMan.IsServer)
+            return;
+
+        var choked = EnsureComp<ChokedComponent>(targetUid);
+        choked.OldParent = Transform(targetUid).ParentUid;
+        choked.HadOldParent = choked.OldParent != null;
+        choked.AddedMuted = false;
+        choked.HadPhysics = false;
+        choked.Puller = pullerUid;
+        choked.Offset = Vector2.Zero;
+        choked.LockedWorldRotation = _transform.GetWorldRotation(targetUid);
+
+        if (!HasComp<MutedComponent>(targetUid))
+        {
+            EnsureComp<MutedComponent>(targetUid);
+            choked.AddedMuted = true;
+        }
+
+        _transform.SetParent(targetUid, pullerUid);
+        _transform.SetCoordinates(targetUid, new EntityCoordinates(pullerUid, choked.Offset));
+        _transform.SetWorldRotation(targetUid, choked.LockedWorldRotation);
+
+        _stun.TryKnockdown(targetUid, TimeSpan.FromSeconds(2), refresh: true, autoStand: false, drop: false, force: true);
+
+        if (TryComp<PhysicsComponent>(targetUid, out var physics))
+        {
+            choked.HadPhysics = true;
+            choked.OldBodyType = physics.BodyType;
+            choked.OldCanCollide = physics.CanCollide;
+            _physics.SetBodyType(targetUid, BodyType.Kinematic, body: physics);
+            _physics.SetCanCollide(targetUid, false, body: physics);
+        }
+
+        _virtual.DeleteInHandsMatching(pullerUid, targetUid);
+        if (_virtual.TrySpawnVirtualItemInHand(targetUid, pullerUid, out var virt1, dropOthers: true, silent: true))
+            EnsureComp<UnremoveableComponent>(virt1.Value);
+        if (_virtual.TrySpawnVirtualItemInHand(targetUid, pullerUid, out var virt2, dropOthers: true, silent: true))
+            EnsureComp<UnremoveableComponent>(virt2.Value);
+    }
+    // OpenSpace-Edit End
 }
