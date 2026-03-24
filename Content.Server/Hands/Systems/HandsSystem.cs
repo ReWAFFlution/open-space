@@ -35,7 +35,7 @@ namespace Content.Server.Hands.Systems
         [Dependency] private readonly PullingSystem _pullingSystem = default!;
         [Dependency] private readonly ThrowingSystem _throwingSystem = default!;
         // OpenSpace-Edit Start
-        [Dependency] private readonly StandingStateSystem _standing = default!;
+        // [Dependency] private readonly StandingStateSystem _standing = default!;
         [Dependency] private readonly SharedStunSystem _stun = default!;
         // OpenSpace-Edit End
 
