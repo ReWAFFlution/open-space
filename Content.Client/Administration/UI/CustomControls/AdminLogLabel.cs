@@ -3,13 +3,11 @@ using Content.Shared.Database; // OpenSpace-Edit
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Utility; // OpenSpace-Edit
-using System.Text.RegularExpressions; // OpenSpace-Edit
 
 namespace Content.Client.Administration.UI.CustomControls;
 
 public sealed class AdminLogLabel : RichTextLabel
 {
-    private static readonly Regex BracketRegex = new(@"[\[\]]", RegexOptions.Compiled); // OpenSpace-Edit
     public AdminLogLabel(ref SharedAdminLog log, HSeparator separator)
     {
         Log = log;

