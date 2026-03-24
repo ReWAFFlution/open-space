@@ -1,4 +1,5 @@
 using System.Numerics;
+using Content.Server._OpenSpace.Throwing; // OpenSpace-Edit
 using Content.Server.Stack;
 using Content.Server.Stunnable;
 using Content.Shared.ActionBlocker;
@@ -12,6 +13,7 @@ using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Movement.Pulling.Systems;
 using Content.Shared.Stacks;
 using Content.Shared.Standing;
+using Content.Shared.Stunnable; // OpenSpace-Edit
 using Content.Shared.Throwing;
 using Robust.Shared.GameStates;
 using Robust.Shared.Input.Binding;
@@ -32,6 +34,10 @@ namespace Content.Server.Hands.Systems
         [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
         [Dependency] private readonly PullingSystem _pullingSystem = default!;
         [Dependency] private readonly ThrowingSystem _throwingSystem = default!;
+        // OpenSpace-Edit Start
+        // [Dependency] private readonly StandingStateSystem _standing = default!;
+        [Dependency] private readonly SharedStunSystem _stun = default!;
+        // OpenSpace-Edit End
 
         private EntityQuery<PhysicsComponent> _physicsQuery;
 
@@ -109,7 +115,37 @@ namespace Content.Server.Hands.Systems
         {
             if (playerSession?.AttachedEntity is not {Valid: true} player || !Exists(player) || !coordinates.IsValid(EntityManager))
                 return false;
+            // OpenSpace-Edit Start
+            if (TryComp<HandsComponent>(player, out var hands) &&
+                TryComp<PullerComponent>(player, out var pullerComp) &&
+                pullerComp.Pulling is { } pulled &&
+                (pullerComp.GrabStage is GrabStage.Heavy or GrabStage.Choke) &&
+                TryComp<PullableComponent>(pulled, out var pullableComp))
+            {
+                var direction = _transformSystem.ToMapCoordinates(coordinates).Position - _transformSystem.GetWorldPosition(player);
+                if (direction == Vector2.Zero)
+                    return true;
 
+                var length = direction.Length();
+                var maxRange = pullerComp.GrabStage switch
+                {
+                    GrabStage.Medium => 2f,
+                    GrabStage.Heavy => 2.5f,
+                    GrabStage.Choke => 3f,
+                    _ => hands.ThrowRange
+                };
+                var distance = Math.Clamp(length, 0.1f, maxRange);
+                direction *= distance / length;
+
+                var throwSpeed = hands.BaseThrowspeed;
+                if (!_pullingSystem.TryStopPull(pulled, pullableComp, player))
+                    return true;
+                EnsureComp<ThrowImpactDamageComponent>(pulled);
+                _throwingSystem.TryThrow(pulled, direction, throwSpeed, player);
+                _stun.TryKnockdown(pulled, TimeSpan.FromSeconds(2), refresh: true, autoStand: true, drop: false, force: true);
+                return true;
+            }
+            // OpenSpace-Edit End
             return ThrowHeldItem(player, coordinates);
         }
 
