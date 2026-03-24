@@ -81,7 +81,7 @@ public sealed class PullingSystem : EntitySystem
     [Dependency] private readonly INetManager _netMan = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly StandingStateSystem _standing = default!;
+    // [Dependency] private readonly StandingStateSystem _standing = default!; Вырезал т.к. нигде не нужно
     [Dependency] private readonly SharedStunSystem _stun = default!;
     [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly ClimbSystem _climbSystem = default!;
