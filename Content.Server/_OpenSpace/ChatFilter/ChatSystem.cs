@@ -347,7 +347,9 @@ public sealed partial class ChatSystem
             return message;
 
         //TODO: Переделать систему + Добавить наказание за банворды
+#pragma warning disable RA0026
         return Regex.Replace(message, "\\b(\\w+)\\b", match =>
+#pragma warning restore RA0026
         {
             bool isUpperCase = match.Value.All(Char.IsUpper);
 
