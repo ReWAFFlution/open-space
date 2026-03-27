@@ -1,10 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Fox Tail: Taken from https://github.com/ParadiseSS13/Paradise edited by Floofers; ",
-  "copyright1": "Fox Tail Big: taken from Nyanotrasen at commit https://github.com/Nyanotrasen/Nyanotrasen/commit/3d493907ce374916d8bd0806ad72c8d9f2d70a19 & tail taken from tgstation at commit https://github.com/tgstation/tgstation/commit/e9cc620e9f908e18949031c6e1b5811e3fc5af4e and modified by github:Morb0; ",
-  "copyright2": "Shark tail: Created by discord:skilets",
-  "copyright3": "Cat tail: taken from tgstation at commit https://github.com/tgstation/tgstation/commit/e9cc620e9f908e18949031c6e1b5811e3fc5af4e and modified by github:Morb0",
+  "copyright": "Fox Tail: Taken from https://github.com/ParadiseSS13/Paradise edited by Floofers; \n Fox Tail Big: taken from Nyanotrasen at commit https://github.com/Nyanotrasen/Nyanotrasen/commit/3d493907ce374916d8bd0806ad72c8d9f2d70a19 & tail taken from tgstation at commit https://github.com/tgstation/tgstation/commit/e9cc620e9f908e18949031c6e1b5811e3fc5af4e and modified by github:Morb0; \n Shark tail: Created by discord:skilets \n Cat tail: taken from tgstation at commit https://github.com/tgstation/tgstation/commit/e9cc620e9f908e18949031c6e1b5811e3fc5af4e and modified by github:Morb0",
   "size": {
     "x": 32,
     "y": 32
