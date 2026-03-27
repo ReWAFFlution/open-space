@@ -1,0 +1,77 @@
+- type: marking
+  id: FoxTail
+  bodyPart: Tail
+  groupWhitelist: [Human]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+        category: Hair
+      fallbackTypes:
+      - !type:CategoryColoring
+        category: FacialHair
+      - !type:SkinColoring
+  sprites:
+  - sprite: _OpenSpace/Mobs/Customization/human_tails.rsi
+    state: tail_fox_wag_prime
+  - sprite: _OpenSpace/Mobs/Customization/human_tails.rsi
+    state: tail_fox_wag_second
+  - sprite: _OpenSpace/Mobs/Customization/human_tails.rsi
+    state: tail_fox_wag_third
+
+- type: marking
+  id: FoxTailBig
+  bodyPart: Tail
+  groupWhitelist: [Human]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+        category: Hair
+      fallbackTypes:
+      - !type:CategoryColoring
+        category: FacialHair
+      - !type:SkinColoring
+  sprites:
+  - sprite: _OpenSpace/Mobs/Customization/human_tails.rsi
+    state: tail_fox_big_wag_prime
+  - sprite: _OpenSpace/Mobs/Customization/human_tails.rsi
+    state: tail_fox_big_wag_second
+  - sprite: _OpenSpace/Mobs/Customization/human_tails.rsi
+    state: tail_fox_big_wag_third
+
+- type: marking
+  id: SharkTail
+  bodyPart: Tail
+  groupWhitelist: [Human]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+        category: Hair
+      fallbackTypes:
+      - !type:CategoryColoring
+        category: FacialHair
+      - !type:SkinColoring
+  sprites:
+  - sprite: _OpenSpace/Mobs/Customization/human_tails.rsi
+    state: shark_tail
+
+- type: marking
+  id: CatTail
+  bodyPart: Tail
+  groupWhitelist: [Human]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+        category: Hair
+      fallbackTypes:
+      - !type:CategoryColoring
+        category: FacialHair
+      - !type:SkinColoring
+  sprites:
+  - sprite: _OpenSpace/Mobs/Customization/human_tails.rsi
+    state: tail_cat_wag_prime
+  - sprite: _OpenSpace/Mobs/Customization/human_tails.rsi
+    state: tail_cat_wag_second

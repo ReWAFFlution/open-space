@@ -45,7 +45,7 @@
       - TailOverlay
       - UndergarmentTop
       - UndergarmentBottom
-      - Special
+      # - Special
 
 - type: entity
   parent: OrganBase

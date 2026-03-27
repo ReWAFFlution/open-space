@@ -39,11 +39,16 @@
       limit: 1
       required: false
     enum.HumanoidVisualLayers.Tail:
-      limit: 0
+      limit: 1 # OpenSpace
       required: false
-    enum.HumanoidVisualLayers.Special:
-      limit: 0
+    # OpenSpace-Edit Start
+    enum.HumanoidVisualLayers.HeadTop:
+      limit: 1
       required: false
+    # enum.HumanoidVisualLayers.Special:
+    #   limit: 0
+    #   required: false
+    # OpenSpace-Edit End
 
 - type: entity
   parent: BaseSpeciesAppearance

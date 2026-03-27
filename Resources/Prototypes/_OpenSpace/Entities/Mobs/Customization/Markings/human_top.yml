@@ -1,0 +1,87 @@
+- type: marking
+  id: CatEarsBasic
+  bodyPart: HeadTop
+  groupWhitelist: [Human]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+        category: Hair
+      fallbackTypes:
+        - !type:SkinColoring
+    layers:
+      ears_cat_inner:
+        type:
+          !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _OpenSpace/Mobs/Customization/human_top.rsi
+    state: ears_basic_outer
+  - sprite: _OpenSpace/Mobs/Customization/human_top.rsi
+    state: ears_basic_inner
+
+- type: marking
+  id: CatEarsStubby
+  bodyPart: HeadTop
+  groupWhitelist: [Human]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+        category: Hair
+      fallbackTypes:
+        - !type:SkinColoring
+    layers:
+      ears_cat_inner:
+        type:
+          !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _OpenSpace/Mobs/Customization/human_top.rsi
+    state: ears_stubby_outer
+  - sprite: _OpenSpace/Mobs/Customization/human_top.rsi
+    state: ears_stubby_inner
+
+- type: marking
+  id: CatEarsCurled
+  bodyPart: HeadTop
+  groupWhitelist: [Human]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+        category: Hair
+      fallbackTypes:
+        - !type:SkinColoring
+    layers:
+      ears_cat_inner:
+        type:
+          !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _OpenSpace/Mobs/Customization/human_top.rsi
+    state: ears_curled_outer
+  - sprite: _OpenSpace/Mobs/Customization/human_top.rsi
+    state: ears_curled_inner
+
+- type: marking
+  id: CatEarsTorn
+  bodyPart: HeadTop
+  groupWhitelist: [Human]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+        category: Hair
+      fallbackTypes:
+        - !type:SkinColoring
+    layers:
+      ears_cat_inner:
+        type:
+          !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _OpenSpace/Mobs/Customization/human_top.rsi
+    state: ears_torn_outer
+  - sprite: _OpenSpace/Mobs/Customization/human_top.rsi
+    state: ears_torn_inner
